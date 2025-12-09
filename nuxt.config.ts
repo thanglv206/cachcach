@@ -16,4 +16,9 @@ export default defineNuxtConfig({
       '@tailwindcss/postcss': {},
     },
   },
+  vite: {
+    server: {
+      allowedHosts: ['oversteadfastly-splenic-amir.ngrok-free.dev'],
+    },
+  }
 })
