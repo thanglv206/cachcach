@@ -267,7 +267,7 @@ onMounted(() => {
    BUT ONLY when NOT dragging. */
 .card-container {
   width: 100%;
-  max-width: 380px;
+  max-width: 320px;
   aspect-ratio: 3/4;
   perspective: 1000px;
   cursor: pointer;

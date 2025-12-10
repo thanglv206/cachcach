@@ -167,8 +167,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex-1 flex flex-col items-center py-8 px-6" 
-       :class="{ 'justify-center': flippedCard !== null, 'justify-start': flippedCard === null }"
+  <div class="flex-1 flex flex-col items-center justify-center py-8 px-6" 
        @touchstart="handleTouchStart"
        @touchmove="handleTouchMove"
        @touchend="handleTouchEnd">
@@ -176,7 +175,7 @@ onMounted(() => {
     <p v-if="!flippedCard" class="text-gray-400 text-base mb-8 text-center">Chọn một lá bài để bắt đầu!</p>
 
     <!-- Cards Container -->
-    <div class="w-full max-w-md" :class="flippedCard ? '' : 'space-y-6'">
+    <div class="w-full max-w-md mx-auto" :class="flippedCard ? '' : 'space-y-6'">
       <!-- THẬT Card -->
       <div 
         v-show="!flippedCard || flippedCard === 'truth'"
@@ -187,13 +186,13 @@ onMounted(() => {
       >
         <div class="card-flipper">
           <!-- Front Face -->
-          <div class="card-face card-front bg-gradient-to-br from-[#4a3a1a] to-[#2d2410] rounded-3xl p-8 shadow-2xl border border-yellow-900/30">
-            <div class="flex justify-center mb-6">
-              <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#f59e0b] to-[#d97706] flex items-center justify-center shadow-lg">
-                <span class="text-4xl font-black text-[#2d2410]">?</span>
+          <div class="card-face card-front bg-gradient-to-br from-[#4a3a1a] to-[#2d2410] rounded-3xl p-6 shadow-2xl border border-yellow-900/30">
+            <div class="flex justify-center mb-4">
+              <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#f59e0b] to-[#d97706] flex items-center justify-center shadow-lg">
+                <span class="text-3xl font-black text-[#2d2410]">?</span>
               </div>
             </div>
-            <h2 class="text-[#f59e0b] text-4xl font-black text-center mb-3 tracking-wide">THẬT</h2>
+            <h2 class="text-[#f59e0b] text-3xl font-black text-center mb-2 tracking-wide">THẬT</h2>
             <p class="text-gray-400 text-sm text-center">Chạm để lật thẻ</p>
           </div>
 
@@ -221,15 +220,15 @@ onMounted(() => {
       >
         <div class="card-flipper">
           <!-- Front Face -->
-          <div class="card-face card-front bg-gradient-to-br from-[#4a3a1a] to-[#2d2410] rounded-3xl p-8 shadow-2xl border border-yellow-900/30">
-            <div class="flex justify-center mb-6">
-              <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#f59e0b] to-[#d97706] flex items-center justify-center shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10 text-[#2d2410]">
+          <div class="card-face card-front bg-gradient-to-br from-[#4a3a1a] to-[#2d2410] rounded-3xl p-6 shadow-2xl border border-yellow-900/30">
+            <div class="flex justify-center mb-4">
+              <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#f59e0b] to-[#d97706] flex items-center justify-center shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-[#2d2410]">
                   <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z" clip-rule="evenodd" />
                 </svg>
               </div>
             </div>
-            <h2 class="text-[#f59e0b] text-4xl font-black text-center mb-3 tracking-wide">THÁCH</h2>
+            <h2 class="text-[#f59e0b] text-3xl font-black text-center mb-2 tracking-wide">THÁCH</h2>
             <p class="text-gray-400 text-sm text-center">Chạm để lật thẻ</p>
           </div>
 
@@ -278,7 +277,7 @@ onMounted(() => {
 /* When flipped: expand to flip-card height and both faces become absolute */
 .card-wrapper.is-flipped {
   aspect-ratio: 3/4;
-  max-width: 380px;
+  max-width: 320px;
   margin-left: auto;
   margin-right: auto;
 }

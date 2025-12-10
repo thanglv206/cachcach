@@ -14,19 +14,19 @@ const goBack = () => {
 <template>
   <div class="w-full max-w-md mx-auto h-[100dvh] flex flex-col bg-[#151c24] text-white overflow-hidden shadow-2xl relative">
     <!-- Header -->
-    <header class="p-6 flex justify-between items-center bg-[#151c24] z-10 shrink-0">
-        <div v-if="showBack" class="w-10">
-             <UButton icon="i-heroicons-chevron-left" color="neutral" variant="ghost" class="p-0 text-3xl text-white" @click="goBack" />
+    <header class="p-4 flex justify-between items-center bg-[#151c24] z-10 shrink-0">
+        <div v-if="showBack" class="w-8">
+             <UButton icon="i-heroicons-chevron-left" color="neutral" variant="ghost" class="p-0 text-2xl text-white" @click="goBack" />
         </div>
-        <div v-else class="w-10"></div> <!-- Spacer -->
+        <div v-else class="w-8"></div> <!-- Spacer -->
 
-       <div class="text-xl font-bold tracking-tight text-center flex-1">{{ headerTitle }}</div>
+       <div class="text-lg font-bold tracking-tight text-center flex-1">{{ headerTitle }}</div>
 
-       <div v-if="showInfo" class="w-10 flex justify-end">
-            <UButton icon="i-heroicons-information-circle" color="neutral" variant="ghost" class="p-0 text-2xl text-white" />
+       <div v-if="showInfo" class="w-8 flex justify-end">
+            <UButton icon="i-heroicons-information-circle" color="neutral" variant="ghost" class="p-0 text-xl text-white" />
        </div>
-       <div v-else class="w-10 flex justify-end">
-           <UButton icon="i-heroicons-cog-6-tooth" color="neutral" variant="ghost" class="text-white" />
+       <div v-else class="w-8 flex justify-end">
+           <UButton icon="i-heroicons-cog-6-tooth" color="neutral" variant="ghost" class="p-0 text-xl text-white" />
        </div>
     </header>
 
