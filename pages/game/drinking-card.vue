@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'game',
-  headerTitle: 'Lật Thẻ',
+  headerTitle: 'Drinking Card',
   headerBack: true,
   headerInfo: true
 })
@@ -18,26 +18,26 @@ let currentX = 0
 let currentY = 0
 
 const challengesOriginal = [
-  "Hãy làm cho một người bạn hoặc người thân của bạn cười bằng một câu chuyện hài hước nhất mà bạn biết.",
-  "Gọi điện cho một người bạn cũ và hát tặng họ một bài hát.",
-  "Kể về lần xấu hổ nhất của bạn cho mọi người nghe.",
-  "Nhắn tin cho người yêu cũ hỏi thăm sức khỏe.",
-  "Mô tả người bạn thân nhất của bạn chỉ bằng 3 từ.",
-  "Gửi một bức ảnh selfie hài hước cho nhóm chat gia đình.",
-  "Thực hiện 10 lần hít đất ngay bây giờ.",
-  "Hãy khen ngợi người ngồi bên phải bạn một câu chân thành.",
-  "Kể một câu chuyện ma ngắn.",
-  "Cho mọi người xem bức ảnh gần nhất trong điện thoại của bạn.",
-  "Giả giọng một người nổi tiếng hoặc một nhân vật hoạt hình.",
-  "Sáng tác một bài thơ ngắn về chiếc ghế bạn đang ngồi.",
-  "Hãy thú nhận một tật xấu của bạn.",
-  "Nhảy một điệu nhảy tự do trong 30 giây.",
-  "Vẽ chân dung người đối diện trong 1 phút.",
-  "Hãy im lặng trong 2 phút tiếp theo.",
-  "Đọc ngược bảng chữ cái.",
-  "Tìm một đồ vật màu đỏ và kể câu chuyện về nó.",
-  "Nói 'Tôi yêu bạn' với người đầu tiên bạn gặp (hoặc nhắn tin).",
-  "Làm mặt xấu nhất có thể và giữ nguyên trong 10 giây."
+  "Kể tên 5 loại rượu trong 10 giây, nếu không uống 2 ly",
+  "Hát một bài hát về tình yêu, nếu không uống 1 ly",
+  "Nhảy trong 30 giây, nếu không uống 2 ly",
+  "Kể một câu chuyện hài, nếu không uống 1 ly",
+  "Bắt chước giọng một người nổi tiếng, nếu không uống 1 ly",
+  "Làm 10 cái hít đất, nếu không uống 3 ly",
+  "Gọi điện cho crush và nói 'Em nhớ anh', nếu không uống 2 ly",
+  "Selfie với biểu cảm hài hước nhất, nếu không uống 1 ly",
+  "Kể bí mật của bạn, nếu không uống 2 ly",
+  "Nhắn tin cho người yêu cũ 'Anh/Em khỏe không?', nếu không uống 3 ly",
+  "Đọc ngược bảng chữ cái, nếu không uống 1 ly",
+  "Khen người bên cạnh 3 câu, nếu không uống 1 ly",
+  "Im lặng trong 2 phút, nếu không uống 2 ly",
+  "Vẽ chân dung người đối diện, nếu không uống 1 ly",
+  "Kể về lần xấu hổ nhất, nếu không uống 2 ly",
+  "Giả vờ là một con vật trong 1 phút, nếu không uống 1 ly",
+  "Nói 'Tôi yêu bạn' với 3 người, nếu không uống 2 ly",
+  "Thú nhận một tật xấu, nếu không uống 1 ly",
+  "Làm mặt xấu nhất và giữ 10 giây, nếu không uống 1 ly",
+  "Kể một câu chuyện ma, nếu không uống 2 ly"
 ]
 
 // Shuffle array helper

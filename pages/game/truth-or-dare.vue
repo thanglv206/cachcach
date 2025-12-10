@@ -159,10 +159,29 @@ const nextQuestion = () => {
   }, 300)
 }
 
+// Tour guide state
+const hasSeenTour = useState('hasSeenTruthOrDareTour', () => false)
+const showTour = ref(false)
+const tourStep = ref(1)
+
+const nextTourStep = () => {
+  if (tourStep.value < 2) {
+    tourStep.value++
+  } else {
+    showTour.value = false
+    hasSeenTour.value = true
+  }
+}
+
 // Initialize shuffled arrays on mount
 onMounted(() => {
   shuffledTruths.value = shuffleArray(truthQuestions)
   shuffledDares.value = shuffleArray(dareChallenges)
+  
+  // Show tour if not seen before
+  if (!hasSeenTour.value) {
+    showTour.value = true
+  }
 })
 </script>
 
@@ -246,10 +265,40 @@ onMounted(() => {
         </div>
       </div>
     </div>
+
+    <!-- Tour Guide Overlay -->
+    <div v-if="showTour" class="fixed inset-0 bg-black/80 z-50 flex flex-col items-center justify-center p-8 text-center" @click="nextTourStep">
+       
+       <!-- Step 1 Instruction -->
+       <div v-if="tourStep === 1" class="flex flex-col items-center animate-bounce mb-32 relative z-50">
+           <p class="text-white text-xl font-bold mb-4">Chọn 1 trong 2 lá bài Thật hay Thách</p>
+           <UIcon name="i-heroicons-cursor-arrow-rays" class="text-5xl text-[#f59e0b]" />
+       </div>
+
+       <!-- Step 2 Instruction -->
+       <div v-if="tourStep === 2" class="flex flex-col items-center relative z-50">
+           <p class="text-white text-xl font-bold mb-8">Vuốt sang ngang để chuyển sang cặp bài mới</p>
+           <div class="flex gap-12 items-center">
+               <UIcon name="i-heroicons-arrow-left" class="text-4xl text-white/50 animate-pulse" />
+               <UIcon name="i-heroicons-hand-raised" class="text-6xl text-[#f59e0b] animate-wiggle" />
+               <UIcon name="i-heroicons-arrow-right" class="text-4xl text-white/50 animate-pulse" />
+           </div>
+       </div>
+
+       <div class="absolute bottom-12 text-white/40 text-sm">Chạm vào màn hình để tiếp tục</div>
+    </div>
   </div>
 </template>
 
 <style scoped>
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+}
+.animate-wiggle {
+  animation: wiggle 1s ease-in-out infinite;
+}
+
 .card-wrapper {
   width: 100%;
   perspective: 1000px;

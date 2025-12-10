@@ -31,21 +31,21 @@ const goBack = () => {
     </header>
 
     <!-- Main Content -->
-    <main class="flex-1 px-4 overflow-y-auto scrollbar-hide flex flex-col">
+    <main class="flex-1 px-4 overflow-y-auto overflow-x-hidden scrollbar-hide flex flex-col">
       <slot />
     </main>
 
     <!-- Footer -->
     <footer class="w-full bg-[#1e2530] border-t border-gray-800 p-2 pb-4 shrink-0">
        <div class="grid grid-cols-2 h-full">
-          <div class="flex flex-col items-center justify-center gap-1 text-primary">
+          <NuxtLink to="/game" class="flex flex-col items-center justify-center gap-1" :class="route.path.startsWith('/game') ? 'text-primary' : 'text-gray-500'">
              <UIcon name="i-heroicons-home" class="text-2xl" />
              <span class="text-xs font-medium">Trang chủ</span>
-          </div>
-          <div class="flex flex-col items-center justify-center gap-1 text-gray-500">
+          </NuxtLink>
+          <NuxtLink to="/discover" class="flex flex-col items-center justify-center gap-1" :class="route.path === '/discover' ? 'text-primary' : 'text-gray-500'">
              <UIcon name="i-heroicons-map" class="text-2xl" />
              <span class="text-xs font-medium">Khám phá</span>
-          </div>
+          </NuxtLink>
        </div>
     </footer>
   </div>
