@@ -17,7 +17,7 @@ let startY = 0
 let currentX = 0
 let currentY = 0
 
-const challenges = [
+const challengesOriginal = [
   "Hãy làm cho một người bạn hoặc người thân của bạn cười bằng một câu chuyện hài hước nhất mà bạn biết.",
   "Gọi điện cho một người bạn cũ và hát tặng họ một bài hát.",
   "Kể về lần xấu hổ nhất của bạn cho mọi người nghe.",
@@ -40,7 +40,20 @@ const challenges = [
   "Làm mặt xấu nhất có thể và giữ nguyên trong 10 giây."
 ]
 
-const currentChallenge = computed(() => challenges[currentIndex.value])
+// Shuffle array helper
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const shuffled = [...array]
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j]!, shuffled[i]!]
+  }
+  return shuffled
+}
+
+// Shuffled challenges
+const challenges = ref<string[]>([])
+
+const currentChallenge = computed(() => challenges.value[currentIndex.value])
 
 const toggleFlip = () => {
   if (!isFlipped.value) {
@@ -53,8 +66,8 @@ const handleTouchStart = (e: TouchEvent) => {
 
   if (e.touches && e.touches.length > 0) {
     isDragging.value = true
-    startX = e.touches[0].clientX
-    startY = e.touches[0].clientY
+    startX = e.touches[0]!.clientX
+    startY = e.touches[0]!.clientY
   }
 }
 
@@ -62,8 +75,8 @@ const handleTouchMove = (e: TouchEvent) => {
   if (!isDragging.value) return
 
   if (e.touches && e.touches.length > 0) {
-     const x = e.touches[0].clientX
-     const y = e.touches[0].clientY
+     const x = e.touches[0]!.clientX
+     const y = e.touches[0]!.clientY
   
      const deltaX = x - startX
      const deltaY = y - startY
@@ -115,7 +128,7 @@ const nextCard = () => {
     currentX = 0
     currentY = 0
     // 3. Update content
-    currentIndex.value = (currentIndex.value + 1) % challenges.length
+    currentIndex.value = (currentIndex.value + 1) % challenges.value.length
   }, 300)
 }
 
@@ -123,12 +136,6 @@ const nextCard = () => {
 const hasSeenTour = useState('hasSeenFlipCardTour', () => false)
 const showTour = ref(false)
 const tourStep = ref(1)
-
-onMounted(() => {
-  if (!hasSeenTour.value) {
-    showTour.value = true
-  }
-})
 
 const nextTourStep = () => {
   if (tourStep.value < 2) {
@@ -138,6 +145,14 @@ const nextTourStep = () => {
     hasSeenTour.value = true
   }
 }
+
+onMounted(() => {
+  if (!hasSeenTour.value) {
+    showTour.value = true
+  }
+  // Shuffle challenges on mount
+  challenges.value = shuffleArray(challengesOriginal)
+})
 </script>
 
 <template>
@@ -169,7 +184,7 @@ const nextTourStep = () => {
               </svg>
           </div>
 
-           <h2 class="text-4xl font-bold text-white mb-2 tracking-tight">CheerUp</h2>
+           <h2 class="text-4xl font-bold text-white mb-2 tracking-tight">Cạch Cạch</h2>
            <p class="text-white/40 text-sm font-light tracking-wide mt-2">Chạm để lật thẻ</p>
         </div>
 

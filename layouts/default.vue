@@ -12,7 +12,7 @@
       <slot />
     </main>
     <footer class="p-4 bg-gray-100 dark:bg-gray-800 text-center">
-      <p>&copy; 2024 Cheerup Game</p>
+      <p>&copy; 2024 Cạch Cạch</p>
     </footer>
   </div>
 </template>

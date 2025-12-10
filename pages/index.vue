@@ -1,6 +1,6 @@
 <template>
   <div class="home-page">
-    <h1>Welcome to Cheerup Game</h1>
+    <h1>Welcome to Cạch Cạch</h1>
     <p>This is the starting point of your Nuxt 3 application.</p>
     <div class="navigation">
       <NuxtLink to="/game/flip-card" class="game-link">Lật thẻ</NuxtLink>

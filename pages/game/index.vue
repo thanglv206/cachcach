@@ -14,7 +14,7 @@ const games = [
     title: 'Thật hay thách',
     subtitle: 'Khám phá bí mật bạn bè',
     image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2532&auto=format&fit=crop',
-    link: '#'
+    link: '/game/truth-or-dare'
   }
 ]
 </script>

@@ -2,7 +2,7 @@
 const route = useRoute()
 const router = useRouter()
 
-const headerTitle = computed(() => route.meta.headerTitle || 'CheerUp')
+const headerTitle = computed(() => route.meta.headerTitle || 'Cạch Cạch')
 const showBack = computed(() => route.meta.headerBack)
 const showInfo = computed(() => route.meta.headerInfo)
 
@@ -12,7 +12,7 @@ const goBack = () => {
 </script>
 
 <template>
-  <div class="w-full max-w-md mx-auto h-screen flex flex-col bg-[#151c24] text-white overflow-hidden shadow-2xl relative">
+  <div class="w-full max-w-md mx-auto h-[100dvh] flex flex-col bg-[#151c24] text-white overflow-hidden shadow-2xl relative">
     <!-- Header -->
     <header class="p-6 flex justify-between items-center bg-[#151c24] z-10 shrink-0">
         <div v-if="showBack" class="w-10">
