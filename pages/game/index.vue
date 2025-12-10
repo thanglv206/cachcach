@@ -5,6 +5,12 @@ definePageMeta({
 
 const topGames = [
   {
+    title: 'Số lớn nhất',
+    subtitle: 'Tìm số lớn nhất trong 9 thẻ bài',
+    image: 'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=2670&auto=format&fit=crop',
+    link: '/game/max-number'
+  },
+  {
     title: 'Drinking card',
     subtitle: 'Thử thách vui vẻ cho đôi lứa',
     image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2671&auto=format&fit=crop',

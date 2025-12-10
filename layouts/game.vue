@@ -1,7 +1,6 @@
 <script setup lang="ts">
 const route = useRoute()
 const router = useRouter()
-const { showButton } = usePWAInstall()
 
 const headerTitle = computed(() => route.meta.headerTitle || 'Cạch Cạch')
 const showBack = computed(() => route.meta.headerBack)
@@ -14,9 +13,6 @@ const goBack = () => {
 
 <template>
   <div class="w-full max-w-md mx-auto h-[100dvh] flex flex-col bg-[#151c24] text-white overflow-hidden shadow-2xl relative">
-    <!-- PWA Install Banner -->
-    <PWAInstallBanner />
-    
     <!-- Header -->
     <header class="p-4 flex justify-between items-center bg-[#151c24] z-10 shrink-0">
         <div v-if="showBack" class="w-8">
@@ -30,9 +26,7 @@ const goBack = () => {
             <UButton icon="i-heroicons-information-circle" color="neutral" variant="ghost" class="p-0 text-xl text-white" />
        </div>
        <div v-else class="w-8 flex justify-end">
-           <!-- Show PWA Install Button if available, otherwise show settings -->
-           <PWAInstallButton />
-           <UButton v-if="!showButton" icon="i-heroicons-cog-6-tooth" color="neutral" variant="ghost" class="p-0 text-xl text-white" />
+           <UButton icon="i-heroicons-cog-6-tooth" color="neutral" variant="ghost" class="p-0 text-xl text-white" />
        </div>
     </header>
 
