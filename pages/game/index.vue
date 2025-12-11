@@ -5,10 +5,16 @@ definePageMeta({
 
 const topGames = [
   {
-    title: 'Số lớn nhất',
-    subtitle: 'Tìm số lớn nhất trong 9 thẻ bài',
+    title: 'Chọn ly',
+    subtitle: 'Tìm phần thưởng trong các ly ngẫu nhiên',
     image: 'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=2670&auto=format&fit=crop',
-    link: '/game/max-number'
+    link: '/game/choose-goblet'
+  },
+  {
+    title: 'Unlucky Box',
+    subtitle: 'Đừng chọn phải ô không may mắn',
+    image: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=2670&auto=format&fit=crop',
+    link: '/game/unlucky-box'
   },
   {
     title: 'Drinking card',
