@@ -38,10 +38,10 @@ const coupleGames = [
     link: '/game/drinking-card'
   },
   {
-    title: 'Lật thẻ bài 18+',
+    title: 'Drinking card 18+',
     subtitle: 'Sắp ra mắt',
     image: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=2574&auto=format&fit=crop',
-    link: '/game/flip-card-18'
+    link: '/game/drinking-card-18'
   }
 ]
 </script>

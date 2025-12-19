@@ -4,11 +4,7 @@
     <header class="flex items-center justify-between px-6 py-4">
       <!-- Logo and Brand -->
       <NuxtLink to="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-        <div class="w-12 h-12 bg-gradient-to-br from-[#f59e0b] to-[#d97706] rounded-2xl flex items-center justify-center shadow-lg">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 text-[#1a1a1a]">
-            <path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 0 0-1.071-.136 9.742 9.742 0 0 0-3.539 6.177 7.547 7.547 0 0 1-1.705-1.715.75.75 0 0 0-1.152-.082A9 9 0 1 0 15.68 4.534a7.46 7.46 0 0 1-2.717-2.248ZM15.75 14.25a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" clip-rule="evenodd" />
-          </svg>
-        </div>
+        <AppLogo size="md" />
         <h1 class="text-2xl font-black text-white">Cạch Cạch</h1>
       </NuxtLink>
 
