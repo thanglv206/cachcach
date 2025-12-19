@@ -176,7 +176,7 @@
                <UIcon name="i-heroicons-check-circle-20-solid" class="w-4 h-4 text-red-500" />
                1 Ly bí mật...
             </div>
-            <NuxtLink to="/game/choose-glass" class="w-full flex items-center justify-center gap-2 bg-white/5 border border-white/10 rounded-2xl py-3 px-5 text-sm font-bold text-white mt-2 hover:bg-white/10 transition-all">
+            <NuxtLink to="/game/choose-goblet" class="w-full flex items-center justify-center gap-2 bg-white/5 border border-white/10 rounded-2xl py-3 px-5 text-sm font-bold text-white mt-2 hover:bg-white/10 transition-all">
               <UIcon name="i-heroicons-play-20-solid" class="w-4 h-4 text-white" />
               Chơi Ngay
             </NuxtLink>
@@ -255,8 +255,18 @@
 </template>
 
 <script setup lang="ts">
-// Using default layout as base
+useSeoMeta({
+  title: 'Cạch Cạch – Game Bài Tương Tác Tiệc Tùng Số 1 Việt Nam',
+  description: 'Cạch Cạch là game bài tương tác tiệc tùng số 1 Việt Nam. Chơi cùng bạn bè, phá băng cuộc vui, không cần tải app, vào là chơi ngay.',
+  ogTitle: 'Cạch Cạch – Game Bài Tương Tác Tiệc Tùng Số 1 Việt Nam',
+  ogDescription: 'Cạch Cạch là game bài tương tác tiệc tùng số 1 Việt Nam. Chơi cùng bạn bè, phá băng cuộc vui, không cần tải app, vào là chơi ngay.',
+  ogImage: '/og-image.jpg',
+  twitterCard: 'summary_large_image',
+  twitterImage: '/og-image.jpg',
+})
+
 </script>
+
 
 <style scoped>
 /* Scoped adjustments */
