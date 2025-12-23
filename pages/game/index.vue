@@ -15,101 +15,131 @@ useSeoMeta({
 
 
 
-const topGames = [
+const sections = [
   {
-    title: 'Chọn ly',
-    subtitle: 'Tìm phần thưởng trong các ly ngẫu nhiên',
-    image: 'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=2670&auto=format&fit=crop',
-    link: '/game/choose-goblet'
+    title: 'Top game hot',
+    icon: '🔥',
+    games: [
+      {
+        title: 'Drinking card',
+        subtitle: 'Thử thách táo bạo cùng bạn bè',
+        link: '/game/drinking-card',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8"><path d="M14 3l7 7m-11 1L3 18l3 3 7-7M10 7l7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+        color: 'bg-orange-500'
+      },
+      {
+        title: 'Thật hay thách',
+        subtitle: 'Nói thật lòng hoặc nhận hình phạt',
+        link: '/game/truth-or-dare',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+        color: 'bg-purple-500'
+      }
+    ]
   },
   {
-    title: 'Unlucky Box',
-    subtitle: 'Đừng chọn phải ô không may mắn',
-    image: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=2670&auto=format&fit=crop',
-    link: '/game/unlucky-box'
-  },
-  {
-    title: 'Drinking card',
-    subtitle: 'Thử thách vui vẻ cho đôi lứa',
-    image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2671&auto=format&fit=crop',
-    link: '/game/drinking-card'
-  },
-  {
-    title: 'Thật hay thách',
-    subtitle: 'Khám phá bí mật bạn bè',
-    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2532&auto=format&fit=crop',
-    link: '/game/truth-or-dare'
+    title: 'Dành cho nhóm bạn',
+    icon: '👥',
+    games: [
+      {
+        title: 'Drinking card',
+        subtitle: 'Thử thách táo bạo cùng bạn bè',
+        link: '/game/drinking-card',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8"><path d="M14 3l7 7m-11 1L3 18l3 3 7-7M10 7l7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+        color: 'bg-orange-500'
+      },
+      {
+        title: 'Chọn ly',
+        subtitle: 'Tìm phần thưởng trong ly ngẫu nhiên',
+        link: '/game/choose-goblet',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8"><path d="M7 2h10l1 7-8 12-8-12 1-7zM7 2v7h10V2M7 13h10" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+        color: 'bg-blue-500'
+      },
+      {
+        title: 'Unlucky box',
+        subtitle: 'Thử vận may, tránh hộp rỗng',
+        link: '/game/unlucky-box',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8"><path d="M21 8l-2-2H5L3 8v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8zM3 8h18M7.5 13h9M12 8v5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+        color: 'bg-emerald-500'
+      }
+    ]
   }
 ]
 
-const coupleGames = [
-  {
-    title: 'Drinking card',
-    subtitle: 'Thử thách vui vẻ cho đôi lứa',
-    image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2671&auto=format&fit=crop',
-    link: '/game/drinking-card'
-  },
-  {
+const coupleSection = {
+  title: 'Dành cho cặp đôi',
+  icon: '❤️',
+  game: {
     title: 'Drinking card 18+',
-    subtitle: 'Sắp ra mắt',
-    image: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=2574&auto=format&fit=crop',
-    link: '/game/drinking-card-18'
+    subtitle: 'Hâm nóng tình cảm với những thử thách nóng bỏng.',
+    link: '/game/drinking-card-18',
+    isHot: true
   }
-]
+}
 </script>
 
 <template>
-  <div class="space-y-8 pb-4">
-    <!-- Top Game Hot Section -->
-    <section>
-      <h2 class="text-xl font-black text-white mb-3 px-2">Top game hot</h2>
-      <div class="overflow-x-auto overflow-y-hidden -mx-6 px-6 snap-x snap-mandatory scrollbar-hide">
-        <div class="flex gap-4 pb-2 pr-6">
-          <div 
-            v-for="(game, index) in topGames" 
-            :key="index" 
-            class="relative flex-shrink-0 w-[70vw] max-w-[320px] aspect-[3/4] rounded-3xl overflow-hidden group snap-center"
-          >
-            <NuxtLink :to="game.link" class="absolute inset-0 z-20"></NuxtLink>
-            <!-- Background Image -->
-            <img :src="game.image" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Game cover" />
-            
-            <!-- Gradient Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/90"></div>
+  <div class="space-y-12 pb-10">
+    <!-- Regular Sections -->
+    <section v-for="section in sections" :key="section.title" class="px-4">
+      <div class="flex items-center gap-2 mb-6">
+        <span class="text-xl">{{ section.icon }}</span>
+        <h2 class="text-xl font-bold text-white">{{ section.title }}</h2>
+      </div>
 
-            <!-- Content -->
-            <div class="absolute bottom-0 left-0 right-0 p-5">
-              <h3 class="text-xl font-black text-white mb-1">{{ game.title }}</h3>
-              <p class="text-gray-300 text-xs">{{ game.subtitle }}</p>
-            </div>
+      <div class="overflow-x-auto -mx-4 px-4 pb-4 scrollbar-hide snap-x">
+        <div class="flex gap-6 w-max">
+          <div 
+            v-for="(game, index) in section.games" 
+            :key="index" 
+            class="w-[220px] bg-[#1a232e] rounded-[44px] p-5 flex flex-col items-center text-center snap-start"
+          >
+            <!-- Icon Circle -->
+            <div 
+              class="w-[88px] h-[88px] rounded-full flex items-center justify-center mb-5 shadow-lg shadow-black/20 text-white"
+              :class="game.color"
+              v-html="game.icon"
+            ></div>
+
+            <h3 class="text-lg font-bold text-white mb-2 leading-tight">{{ game.title }}</h3>
+            <p class="text-gray-400 text-xs mb-6 line-clamp-2">{{ game.subtitle }}</p>
+
+            <NuxtLink 
+              :to="game.link" 
+              class="mt-auto w-full py-2.5 px-4 bg-white/5 hover:bg-white/10 active:scale-95 transition-all text-white rounded-[20px] text-sm font-bold"
+            >
+              Chơi ngay
+            </NuxtLink>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Dành cho cặp đôi Section -->
-    <section>
-      <h2 class="text-xl font-black text-white mb-3 px-2">Dành cho cặp đôi</h2>
-      <div class="overflow-x-auto overflow-y-hidden -mx-6 px-6 snap-x snap-mandatory scrollbar-hide">
-        <div class="flex gap-4 pb-2 pr-6">
-          <div 
-            v-for="(game, index) in coupleGames" 
-            :key="index" 
-            class="relative flex-shrink-0 w-[70vw] max-w-[320px] aspect-[3/4] rounded-3xl overflow-hidden group snap-center"
-          >
-            <NuxtLink :to="game.link" class="absolute inset-0 z-20"></NuxtLink>
-            <!-- Background Image -->
-            <img :src="game.image" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Game cover" />
-            
-            <!-- Gradient Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/90"></div>
+    <!-- Couple Section (Full Width Block) -->
+    <section class="px-4 pb-4">
+      <div class="flex items-center gap-2 mb-6">
+        <span class="text-xl">{{ coupleSection.icon }}</span>
+        <h2 class="text-xl font-bold text-white">{{ coupleSection.title }}</h2>
+      </div>
 
-            <!-- Content -->
-            <div class="absolute bottom-0 left-0 right-0 p-5">
-              <h3 class="text-xl font-black text-white mb-1">{{ game.title }}</h3>
-              <p class="text-gray-300 text-xs">{{ game.subtitle }}</p>
-            </div>
+      <div class="relative w-full overflow-hidden rounded-[32px] bg-gradient-to-r from-[#f43f5e] to-[#fb7185] p-8 shadow-xl shadow-rose-500/10 active:scale-[0.98] transition-all group">
+        <NuxtLink :to="coupleSection.game.link" class="absolute inset-0 z-10"></NuxtLink>
+        
+        <div class="relative z-20 flex flex-col items-start gap-4">
+          <span class="px-2.5 py-1 bg-black/20 backdrop-blur-md rounded-full text-[10px] font-bold text-white border border-white/10">18+</span>
+          
+          <div class="max-w-[65%]">
+            <h3 class="text-2xl font-black text-white mb-2">{{ coupleSection.game.title }}</h3>
+            <p class="text-white/80 text-xs leading-relaxed">{{ coupleSection.game.subtitle }}</p>
           </div>
+
+          <button class="mt-2 px-6 py-2.5 bg-white text-rose-500 rounded-full text-sm font-bold shadow-lg shadow-rose-900/10">
+            Khám phá
+          </button>
+        </div>
+
+        <!-- Background Decorative Icon -->
+        <div class="absolute right-[-20px] bottom-[-10px] w-48 h-48 text-white/20 -rotate-12 pointer-events-none group-hover:scale-110 transition-transform duration-500">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-full h-full"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
         </div>
       </div>
     </section>
