@@ -1,256 +1,310 @@
 <template>
-  <div class="pb-24 overflow-x-hidden">
-    <!-- Existing Hero Section -->
-    <div class="flex flex-col items-center justify-center px-6 min-h-[80dvh] lg:min-h-[100dvh]">
-      <!-- Badge -->
-      <div class="mb-8 text-center">
-        <span class="inline-block px-6 py-2 bg-gradient-to-r from-[#f59e0b]/20 to-[#d97706]/20 border border-[#f59e0b]/30 rounded-full text-[#f59e0b] text-sm font-bold tracking-wide uppercase">
-          Game tiệc tùng số #1
-        </span>
+  <div class="pb-24 overflow-x-hidden bg-[#1a120b] min-h-screen text-white">
+    <!-- New Hero Section -->
+    <div class="relative pt-6 md:pt-16 pb-10 md:pb-24 px-6 lg:px-12 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <!-- Left Content -->
+      <div class="flex-1 text-left order-1">
+        <!-- Badge -->
+        <div class="mb-6">
+          <span class="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[#f59e0b] text-[10px] font-bold tracking-tight uppercase">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#f59e0b] shadow-[0_0_8px_#f59e0b]"></span>
+            NEW RELEASE 2.0
+          </span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-6 leading-[1.1]">
+          Khuấy động cuộc vui<br>
+          <span class="text-[#f59e0b]">cùng Cạch Cạch!</span>
+        </h1>
+
+        <!-- Description -->
+        <p class="text-gray-400 max-w-lg mb-10 text-base md:text-lg leading-relaxed font-medium">
+          Nền tảng boardgame online cực 'cháy' cho nhóm bạn. Kết nối, thử thách và tạo nên những khoảnh khắc khó quên ngay trên trình duyệt của bạn.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-4 mb-16">
+          <NuxtLink 
+            to="/game"
+            class="flex items-center gap-3 bg-[#f59e0b] text-black text-base font-black py-4 px-8 rounded-xl hover:scale-105 transition-all duration-300 active:scale-95 shadow-[0_8px_25px_rgba(245,158,11,0.3)]"
+          >
+            <UIcon name="i-heroicons-play-circle-20-solid" class="w-6 h-6" />
+            Chơi ngay
+          </NuxtLink>
+          <NuxtLink 
+            to="/discover"
+            class="flex items-center gap-3 bg-white/5 border border-white/10 text-white text-base font-black py-4 px-8 rounded-xl hover:bg-white/10 transition-all duration-300 active:scale-95"
+          >
+            <UIcon name="i-heroicons-globe-alt-20-solid" class="w-6 h-6" />
+            Khám phá
+          </NuxtLink>
+        </div>
+
+        <!-- Stats -->
+        <div class="flex items-center gap-6 md:gap-10 border-t border-white/10 pt-10">
+          <div>
+            <div class="text-2xl md:text-3xl font-black text-white">50K+</div>
+            <div class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Người chơi</div>
+          </div>
+          <div class="w-px h-10 bg-white/10"></div>
+          <div>
+            <div class="text-2xl md:text-3xl font-black text-white">100+</div>
+            <div class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Thử thách</div>
+          </div>
+          <div class="w-px h-10 bg-white/10"></div>
+          <div>
+            <div class="text-2xl md:text-3xl font-black text-white">4.9/5</div>
+            <div class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Đánh giá</div>
+          </div>
+        </div>
       </div>
 
-      <!-- Headline -->
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-center mb-4 leading-tight">
-        <span class="text-white">Tiết lộ sự thật &</span><br>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#fbbf24]">khơi gợi sự tò mò</span>
-      </h2>
-
-      <!-- Description -->
-      <p class="text-gray-400 text-center max-w-md mb-12 text-base leading-relaxed">
-        Khám phá những bí mật động trời và thử thách điên rồ cùng bạn bè trong tựa game thẻ bài tương tác hấp dẫn nhất.
-      </p>
-
-      <!-- CTA Button -->
-      <div class="w-full max-w-md">
-        <NuxtLink 
-          to="/game"
-          class="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-[#f59e0b] to-[#f97316] text-white text-lg font-bold py-5 px-8 rounded-2xl shadow-2xl shadow-[#f59e0b]/30 hover:shadow-[#f59e0b]/50 hover:scale-105 transition-all duration-300 active:scale-95"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-            <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
-          </svg>
-          Chơi ngay
-        </NuxtLink>
+      <!-- Right Content (Image) -->
+      <div class="flex-1 relative order-2">
+        <div class="relative rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
+          <img 
+            src="/images/hero_people_playing.png" 
+            alt="Friends playing games" 
+            class="w-full h-auto object-cover aspect-[4/3] lg:aspect-square xl:aspect-[4/3]"
+          />
+          <!-- Overlay Badge -->
+          <div class="absolute bottom-6 left-6 p-5 bg-[#1a120b]/80 backdrop-blur-md rounded-2xl border border-white/10 max-w-[260px]">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="flex items-center gap-1.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></div>
+                <span class="text-xs font-black text-white uppercase tracking-tight">Đang online</span>
+              </div>
+            </div>
+            <p class="text-[11px] text-gray-300 leading-normal font-medium">
+              <span class="text-white font-bold">1,204</span> nhóm đang cháy hết mình cùng "Thật Hay Thách"!
+            </p>
+          </div>
+        </div>
+        
+        <!-- Subtle glow background -->
+        <div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[#f59e0b]/10 blur-[100px] rounded-full"></div>
       </div>
     </div>
 
-    <!-- Category Strip (Full Width) -->
-    <div class="mb-12">
-      <div class="bg-[#ff9000] px-4 py-5 shadow-2xl">
-        <div class="flex justify-around items-center max-w-md mx-auto uppercase tracking-[0.15em] leading-none">
-          <div class="flex items-center gap-2 font-black text-[11px] text-black cursor-pointer">
-            <UIcon name="i-heroicons-star-20-solid" class="w-4 h-4" />
-            Thử thách
+    <!-- Feature Strip -->
+    <div class="bg-[#241a12] border-y border-white/5 py-8 md:py-12 px-6">
+      <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+        <div class="flex flex-col items-center gap-4 group">
+          <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 group-hover:bg-[#f59e0b]/10 group-hover:border-[#f59e0b]/30 transition-all duration-300">
+            <UIcon name="i-heroicons-device-phone-mobile" class="w-7 h-7 text-[#4a90e2]" />
           </div>
-          <div class="flex items-center gap-2 font-black text-[11px] text-black cursor-pointer">
-            <UIcon name="i-heroicons-heart-20-solid" class="w-4 h-4" />
-            Cặp đôi
+          <span class="text-[11px] text-gray-400 font-bold uppercase tracking-[0.2em] group-hover:text-white transition-colors">Đa nền tảng</span>
+        </div>
+        <div class="flex flex-col items-center gap-4 group">
+          <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 group-hover:bg-[#f59e0b]/10 group-hover:border-[#f59e0b]/30 transition-all duration-300">
+            <UIcon name="i-heroicons-bolt-20-solid" class="w-7 h-7 text-[#a855f7]" />
           </div>
-          <div class="flex items-center gap-2 font-black text-[11px] text-black cursor-pointer">
-            <UIcon name="i-heroicons-beaker-20-solid" class="w-4 h-4" />
-            Tiệc tùng
+          <span class="text-[11px] text-gray-400 font-bold uppercase tracking-[0.2em] group-hover:text-white transition-colors">Không cần cài đặt</span>
+        </div>
+        <div class="flex flex-col items-center gap-4 group">
+          <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 group-hover:bg-[#f59e0b]/10 group-hover:border-[#f59e0b]/30 transition-all duration-300">
+            <UIcon name="i-heroicons-user-group-20-solid" class="w-7 h-7 text-[#22c55e]" />
           </div>
+          <span class="text-[11px] text-gray-400 font-bold uppercase tracking-[0.2em] group-hover:text-white transition-colors">Chơi cùng bạn bè</span>
+        </div>
+        <div class="flex flex-col items-center gap-4 group">
+          <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 group-hover:bg-[#f59e0b]/10 group-hover:border-[#f59e0b]/30 transition-all duration-300">
+            <UIcon name="i-heroicons-squares-2x2-20-solid" class="w-7 h-7 text-[#ef4444]" />
+          </div>
+          <span class="text-[11px] text-gray-400 font-bold uppercase tracking-[0.2em] group-hover:text-white transition-colors">Game đa dạng</span>
         </div>
       </div>
     </div>
 
-    <!-- Game List -->
-    <div class="px-6 space-y-6">
-      <!-- Thật Hay Thách -->
-      <section class="relative bg-[#1c1c1e] border border-white/10 rounded-[40px] p-7 shadow-2xl">
-        <div class="absolute top-6 right-6 w-11 h-11 bg-[#ffb700] rounded-full flex items-center justify-center shadow-[0_0_25px_rgba(255,183,0,0.4)] border border-white/20">
-          <UIcon name="i-heroicons-bolt-20-solid" class="w-7 h-7 text-black" />
-        </div>
-        <div class="mb-5">
-          <h3 class="text-2xl font-black mb-1 text-white">Thật Hay Thách</h3>
-          <p class="text-gray-400 text-xs font-medium">Hơn 1000 câu hỏi hóc búa.</p>
-        </div>
-        <div class="flex gap-5">
-          <div class="relative w-32 shrink-0 aspect-[3/4] rounded-3xl bg-gradient-to-br from-[#ff9a9e] to-[#fad0c4] border border-white/20 shadow-xl">
-            <div class="absolute top-3 right-3 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-xl border border-white/20">
-              <span class="text-[9px] font-bold text-white uppercase italic tracking-wider">Top 1</span>
-            </div>
+    <!-- Weekly Spotlight -->
+    <section class="py-12 md:py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-black text-white mb-8">Tiêu Điểm Tuần Này</h2>
+      <div class="relative bg-[#2d1b0e] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl flex flex-col md:flex-row min-h-[400px]">
+        <!-- Left Section -->
+        <div class="flex-1 p-8 md:p-12 flex flex-col justify-center">
+          <div class="mb-4">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-lg text-red-500 text-[10px] font-black uppercase tracking-wider">
+               <UIcon name="i-heroicons-shield-exclamation-20-solid" class="w-3.5 h-3.5" />
+               18+ Content
+            </span>
           </div>
-          <div class="flex flex-col justify-between py-2">
-            <div class="flex gap-2">
-              <span class="px-3 py-1 bg-white/10 rounded-lg text-[10px] font-black text-[#ffb700] uppercase tracking-widest border border-white/5">Truth</span>
-              <span class="px-3 py-1 bg-white/10 rounded-lg text-[10px] font-black text-[#ffb700] uppercase tracking-widest border border-white/5">Dare</span>
-            </div>
-            <p class="text-[11px] text-gray-300 leading-relaxed font-medium">Khám phá bí mật và thử thách cùng hội bạn thân ngay nào!</p>
-            <NuxtLink to="/game/truth-or-dare" class="mt-3 flex items-center justify-center gap-2 bg-white/5 border border-white/10 rounded-2xl py-2.5 px-5 text-sm font-bold text-[#ffb700] hover:bg-white/10 transition-colors">
-              <UIcon name="i-heroicons-play-20-solid" class="w-4 h-4" />
-              Chơi Ngay
+          <h3 class="text-3xl md:text-4xl font-black text-white mb-4">Lật thẻ bài 18+</h3>
+          <p class="text-gray-400 text-base leading-relaxed mb-8 max-w-md">
+            Phiên bản táo bạo dành cho người trưởng thành. Những thử thách "nóng bỏng" và những bí mật thầm kín sẽ được hé lộ. Bạn có dám thử?
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <NuxtLink 
+              to="/game/drinking-card-18"
+              class="w-full md:w-auto flex items-center justify-center gap-2 bg-[#e11d48] text-white text-sm font-black py-3.5 px-8 rounded-xl hover:bg-[#be123c] transition-all"
+            >
+              <UIcon name="i-heroicons-play-20-solid" class="w-5 h-5" />
+              Chơi ngay
             </NuxtLink>
           </div>
         </div>
-      </section>
+        <!-- Right Section (Image) -->
+        <div class="flex-1 relative">
+          <img 
+            src="/images/spotlight_poker_neon.png" 
+            alt="Spotlight game" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-r from-[#2d1b0e] via-transparent to-transparent hidden md:block"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#2d1b0e] via-transparent to-transparent md:hidden"></div>
+        </div>
+      </div>
+    </section>
 
-      <!-- Lật Thẻ Bài -->
-      <section class="relative bg-[#1c1c1e] border border-white/10 rounded-[40px] p-7 shadow-2xl">
-        <div class="absolute top-6 right-6 w-11 h-11 bg-[#2c2c2e] rounded-full flex items-center justify-center shadow-lg border border-white/10">
-          <UIcon name="i-heroicons-rectangle-stack-20-solid" class="w-7 h-7 text-[#ff9000]" />
+    <!-- Game List -->
+    <section class="py-12 md:py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 md:mb-14">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-black text-white mb-3">Kho Game Độc Đáo</h2>
+          <p class="text-gray-500 font-bold text-base md:text-lg">Tuyển tập những game "gây nghiện" nhất cho hội bạn thân</p>
         </div>
-        <div class="mb-5">
-          <h3 class="text-2xl font-black mb-1 text-white">Lật Thẻ Bài</h3>
-          <div class="flex items-center gap-2">
-            <div class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
-            <p class="text-gray-400 text-xs font-medium">Luật chơi đơn giản</p>
+        <NuxtLink to="/game" class="flex items-center gap-2 text-[#f59e0b] font-black text-sm uppercase tracking-widest hover:underline group px-4 py-2 bg-white/5 rounded-full border border-white/5">
+          Xem tất cả
+          <UIcon name="i-heroicons-arrow-right-20-solid" class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </NuxtLink>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
+        <!-- Thật Hay Thách -->
+        <section class="bg-[#241a12] rounded-[32px] md:rounded-[40px] p-6 md:p-8 flex flex-col sm:flex-row gap-6 md:gap-8 hover:bg-[#2d2118] transition-all border border-white/5 hover:border-[#f59e0b]/20 group">
+          <!-- Card Illustration -->
+          <div class="w-full sm:w-40 aspect-[3/4] sm:h-auto rounded-2xl md:rounded-3xl bg-gradient-to-br from-[#80316d] to-[#4e1b41] flex items-center justify-center relative shrink-0 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+             <div class="absolute top-4 right-4 px-2.5 py-1 bg-[#f43f5e] rounded-lg text-[9px] font-black text-white italic tracking-tighter">HOT</div>
+             <span class="text-7xl font-black text-white/10 blur-[1px]">?</span>
+             <span class="absolute text-5xl font-black text-white/40 drop-shadow-2xl">?</span>
           </div>
-        </div>
-        <div class="flex gap-5">
-          <div class="relative w-32 shrink-0 aspect-[3/4] rounded-3xl bg-[#0f0f0f] border border-white/10 shadow-xl flex items-center justify-center overflow-hidden bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]">
-            <UIcon name="i-heroicons-question-mark-circle-20-solid" class="w-12 h-12 text-white/5" />
-            <div class="absolute bottom-3 right-3 text-[#ff9000]">
-              <UIcon name="i-heroicons-heart-20-solid" class="w-5 h-5" />
+          <!-- Card Content -->
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-1">
+                 <h3 class="text-2xl font-black text-white group-hover:text-[#f59e0b] transition-colors">Thật Hay Thách</h3>
+                 <div class="w-9 h-9 rounded-full bg-[#f43f5e]/10 flex items-center justify-center border border-[#f43f5e]/20">
+                    <UIcon name="i-heroicons-bolt-20-solid" class="w-5 h-5 text-[#f43f5e]" />
+                 </div>
+              </div>
+              <p class="text-gray-500 text-xs font-bold mb-3 md:mb-5 tracking-tight">Hơn 1000 câu hỏi hóc búa.</p>
+              <div class="flex gap-2 mb-4 md:mb-6">
+                 <span class="px-3 py-1 bg-white/5 rounded-lg text-[10px] font-black text-[#f43f5e] uppercase tracking-wider border border-white/5">Truth</span>
+                 <span class="px-3 py-1 bg-white/5 rounded-lg text-[10px] font-black text-[#f59e0b] uppercase tracking-wider border border-white/5">Dare</span>
+              </div>
+              <p class="text-sm text-gray-400 leading-relaxed mb-6 md:mb-8 font-medium">Khám phá bí mật và thử thách cùng hội bạn thân ngay nào!</p>
             </div>
+            <NuxtLink to="/game/truth-or-dare" class="w-full flex items-center justify-center gap-3 bg-[#a855f7] rounded-2xl py-3.5 text-sm font-black text-white shadow-[0_8px_25px_rgba(168,85,247,0.2)] hover:scale-105 transition-all active:scale-95">
+               <UIcon name="i-heroicons-play-20-solid" class="w-5 h-5" />
+               Chơi Ngay
+            </NuxtLink>
           </div>
-          <div class="flex flex-col justify-between py-2">
-            <div class="flex gap-2">
-              <span class="px-3 py-1 bg-white/10 rounded-lg text-[10px] font-black text-gray-400 uppercase tracking-widest">Classic</span>
-              <span class="px-3 py-1 bg-white/10 rounded-lg text-[10px] font-black text-gray-400 uppercase tracking-widest">Party</span>
+        </section>
+
+        <!-- Lật Thẻ Bài -->
+        <section class="bg-[#241a12] rounded-[32px] md:rounded-[40px] p-6 md:p-8 flex flex-col sm:flex-row gap-6 md:gap-8 hover:bg-[#2d2118] transition-all border border-white/5 hover:border-[#4a90e2]/20 group">
+          <!-- Card Illustration -->
+          <div class="w-full sm:w-40 aspect-[3/4] sm:h-auto rounded-2xl md:rounded-3xl bg-gradient-to-br from-[#1e293b] to-[#0f172a] flex items-center justify-center relative shrink-0 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+             <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+             <UIcon name="i-heroicons-rectangle-stack" class="w-16 h-16 text-white/10 blur-[1px] absolute" />
+             <UIcon name="i-heroicons-rectangle-stack-20-solid" class="w-12 h-12 text-white/50 drop-shadow-2xl" />
+          </div>
+          <!-- Card Content -->
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-1">
+                 <h3 class="text-2xl font-black text-white group-hover:text-[#4a90e2] transition-colors">Lật Thẻ Bài</h3>
+                 <div class="w-9 h-9 rounded-full bg-[#4a90e2]/10 flex items-center justify-center border border-[#4a90e2]/20">
+                    <UIcon name="i-heroicons-rectangle-stack-20-solid" class="w-5 h-5 text-[#4a90e2]" />
+                 </div>
+              </div>
+              <div class="flex items-center gap-2 mb-3 md:mb-5">
+                <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+                <p class="text-gray-500 text-xs font-bold tracking-tight">Luật chơi đơn giản</p>
+              </div>
+              <div class="flex gap-2 mb-4 md:mb-6">
+                 <span class="px-3 py-1 bg-white/5 rounded-lg text-[10px] font-black text-gray-400 uppercase tracking-wider border border-white/5">Classic</span>
+                 <span class="px-3 py-1 bg-white/5 rounded-lg text-[10px] font-black text-gray-400 uppercase tracking-wider border border-white/5">Party</span>
+              </div>
+              <p class="text-sm text-gray-400 leading-relaxed mb-6 md:mb-8 font-medium">Mỗi lá bài là một yêu cầu thú vị. Không ai biết trước điều gì sẽ xảy ra!</p>
             </div>
-            <p class="text-[11px] text-gray-300 leading-relaxed font-medium">Mỗi lá bài là một yêu cầu thú vị. Không ai biết trước điều gì sẽ xảy ra!</p>
-            <NuxtLink to="/game/drinking-card" class="mt-3 flex items-center justify-center gap-2 bg-[#ff9000] rounded-2xl py-3 px-6 text-sm font-black text-black shadow-[0_8px_20px_rgba(255,144,0,0.3)] hover:brightness-110 transition-all">
+            <NuxtLink to="/game/drinking-card" class="w-full flex items-center justify-center gap-3 bg-[#1d4ed8] rounded-2xl py-4 text-sm font-black text-white shadow-[0_8px_25px_rgba(29,78,216,0.2)] hover:scale-105 transition-all active:scale-95">
+               <UIcon name="i-heroicons-play-20-solid" class="w-5 h-5" />
                Bắt đầu lật
             </NuxtLink>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Lật Thẻ 18+ -->
-      <section class="relative bg-[#1c1c1e] border border-white/10 rounded-[40px] p-7 shadow-2xl overflow-hidden">
-        <div class="flex justify-between items-start mb-5">
-          <div class="flex items-center gap-4">
-             <div class="px-3 py-1.5 bg-pink-500/20 rounded-lg border border-pink-500/30 text-[11px] font-black text-pink-500 uppercase italic leading-none tracking-wider">18+</div>
-             <h3 class="text-2xl font-black text-white">Lật Thẻ 18+</h3>
+        <!-- Chọn Ly -->
+        <section class="bg-[#241a12] rounded-[32px] md:rounded-[40px] p-6 md:p-8 flex flex-col sm:flex-row gap-6 md:gap-8 hover:bg-[#2d2118] transition-all border border-white/5 hover:border-[#f59e0b]/20 group">
+          <!-- Card Illustration -->
+          <div class="w-full sm:w-40 aspect-[3/4] sm:h-auto rounded-2xl md:rounded-3xl bg-gradient-to-br from-[#4b3621] to-[#2c1d10] flex items-center justify-center relative shrink-0 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+             <UIcon name="i-heroicons-beaker" class="w-16 h-16 text-white/10 blur-[1px] absolute" />
+             <UIcon name="i-heroicons-beaker-20-solid" class="w-14 h-14 text-[#f59e0b] drop-shadow-2xl" />
           </div>
-        </div>
-        <div class="flex gap-6 items-center">
-          <div class="flex-1">
-            <p class="text-sm text-gray-400 leading-relaxed mb-6 font-medium">
-              Hâm nóng bầu không khí với những thử thách táo bạo và nóng bỏng nhất.
-            </p>
-            <NuxtLink 
-              to="/game/drinking-card-18"
-              class="w-full flex items-center justify-center bg-gradient-to-r from-[#a855f7] to-[#ec4899] text-white text-xs font-black py-4 rounded-2xl shadow-[0_10px_30px_rgba(236,72,153,0.3)] active:scale-95 transition-all mb-2"
-            >
-              Khám phá ngay
+          <!-- Card Content -->
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-1">
+                 <h3 class="text-2xl font-black text-white group-hover:text-[#f59e0b] transition-colors">Chọn Ly</h3>
+                 <div class="w-9 h-9 rounded-full bg-[#f59e0b]/10 flex items-center justify-center border border-[#f59e0b]/20">
+                    <UIcon name="i-heroicons-trophy-20-solid" class="w-5 h-5 text-[#f59e0b]" />
+                 </div>
+              </div>
+              <p class="text-gray-500 text-xs font-bold mb-3 md:mb-5 tracking-tight">Thử thách nhân phẩm</p>
+              <div class="space-y-2 mb-4 md:mb-6">
+                <div class="flex items-center gap-3 text-[11px] text-gray-400 font-bold">
+                   <UIcon name="i-heroicons-check-circle-20-solid" class="w-4 h-4 text-green-500" />
+                   1 ly
+                </div>
+                <div class="flex items-center gap-3 text-[11px] text-gray-400 font-bold">
+                   <UIcon name="i-heroicons-check-circle-20-solid" class="w-4 h-4 text-orange-500" />
+                   2 ly
+                </div>
+                <div class="flex items-center gap-3 text-[11px] text-gray-400 font-bold">
+                   <UIcon name="i-heroicons-check-circle-20-solid" class="w-4 h-4 text-red-500" />
+                   3 ly
+                </div>
+              </div>
+            </div>
+            <NuxtLink to="/game/choose-goblet" class="w-full flex items-center justify-center gap-3 bg-[#92400e] rounded-2xl py-3.5 text-sm font-black text-white shadow-[0_8px_25px_rgba(146,64,14,0.2)] hover:scale-105 transition-all active:scale-95">
+               <UIcon name="i-heroicons-play-20-solid" class="w-5 h-5" />
+               Chơi Ngay
             </NuxtLink>
           </div>
-          <div class="relative w-28 aspect-[3/4] rounded-3xl bg-black border border-white/10 flex items-center justify-center rotate-6 shadow-2xl shrink-0 translate-x-2">
-             <UIcon name="i-heroicons-sparkles-20-solid" class="w-14 h-14 text-pink-500 opacity-20" />
-             <div class="absolute inset-0 flex items-center justify-center">
-                <svg class="w-10 h-10 text-pink-500 drop-shadow-[0_0_15px_rgba(236,72,153,0.5)]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-             </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Chọn Ly -->
-      <section class="relative bg-[#1c1c1e] border border-white/10 rounded-[40px] p-7 shadow-2xl">
-        <div class="absolute top-6 right-6 w-11 h-11 bg-[#3d2a1a] rounded-full flex items-center justify-center border border-[#5d4037] shadow-lg">
-          <UIcon name="i-heroicons-trophy-20-solid" class="w-7 h-7 text-[#ffb700]" />
-        </div>
-        <div class="mb-5">
-          <h3 class="text-2xl font-black mb-1 text-white">Chọn Ly</h3>
-          <p class="text-gray-400 text-xs font-medium">Thử thách nhân phẩm</p>
-        </div>
-        <div class="flex gap-6 items-center">
-          <div class="relative w-32 shrink-0 aspect-square rounded-3xl bg-[#0f0f0f] border border-white/10 shadow-inner flex flex-col items-center justify-center gap-3">
-            <UIcon name="i-heroicons-beaker-20-solid" class="w-10 h-10 text-[#ffb700] drop-shadow-[0_0_10px_rgba(255,183,0,0.3)]" />
-            <div class="flex flex-col gap-1.5 items-center">
-               <div class="w-6 h-0.5 bg-[#ffb700]/30 rounded-full"></div>
-               <div class="w-8 h-0.5 bg-[#ffb700]/50 rounded-full"></div>
-            </div>
+        <!-- Unlucky Box -->
+        <section class="bg-[#241a12] rounded-[32px] md:rounded-[40px] p-6 md:p-8 flex flex-col sm:flex-row gap-6 md:gap-8 hover:bg-[#2d2118] transition-all border border-white/5 hover:border-[#ef4444]/20 group">
+          <!-- Card Illustration -->
+          <div class="w-full sm:w-40 aspect-[3/4] sm:h-auto rounded-2xl md:rounded-3xl bg-gradient-to-br from-[#450a0a] to-[#000000] flex flex-col items-center justify-center relative shrink-0 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+             <div class="absolute top-4 right-4 px-2 py-0.5 bg-[#ef4444] rounded text-[8px] font-black text-white tracking-tighter">DANGER</div>
+             <UIcon name="i-heroicons-cube" class="w-20 h-20 text-white/5 blur-[1px] absolute" />
+             <UIcon name="i-heroicons-archive-box-20-solid" class="w-16 h-16 text-[#ef4444] drop-shadow-2xl" />
           </div>
-          <div class="flex-1 space-y-3">
-            <div class="flex items-center gap-3 text-xs text-gray-300 font-bold">
-               <UIcon name="i-heroicons-check-circle-20-solid" class="w-4 h-4 text-green-500" />
-               1 Ly nước lọc
+          <!-- Card Content -->
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-1">
+                 <h3 class="text-2xl font-black text-white group-hover:text-[#ef4444] transition-colors">Unlucky Box</h3>
+                 <div class="w-9 h-9 rounded-full bg-[#ef4444]/10 flex items-center justify-center border border-[#ef4444]/20">
+                    <UIcon name="i-heroicons-exclamation-triangle-20-solid" class="w-5 h-5 text-[#ef4444]" />
+                 </div>
+              </div>
+              <p class="text-gray-500 text-xs font-bold mb-2 md:mb-5 tracking-tight">Hộp quà xui xẻo</p>
+              <div class="py-2 md:py-6 min-h-[10px] md:min-h-[40px]"></div>
+              <p class="text-sm text-gray-400 leading-relaxed mb-4 md:mb-8 font-medium">Thử thách lòng can đảm với những hình phạt "khó đỡ" nhất. Bạn có dám thử?</p>
             </div>
-            <div class="flex items-center gap-3 text-xs text-gray-300 font-bold">
-               <UIcon name="i-heroicons-check-circle-20-solid" class="w-4 h-4 text-orange-500" />
-               1 Ly rượu mạnh
-            </div>
-            <div class="flex items-center gap-3 text-xs text-gray-300 font-bold">
-               <UIcon name="i-heroicons-check-circle-20-solid" class="w-4 h-4 text-red-500" />
-               1 Ly bí mật...
-            </div>
-            <NuxtLink to="/game/choose-goblet" class="w-full flex items-center justify-center gap-2 bg-white/5 border border-white/10 rounded-2xl py-3 px-5 text-sm font-bold text-white mt-2 hover:bg-white/10 transition-all">
-              <UIcon name="i-heroicons-play-20-solid" class="w-4 h-4 text-white" />
-              Chơi Ngay
+            <NuxtLink to="/game/unlucky-box" class="w-full flex items-center justify-center gap-3 bg-[#b91c1c] rounded-2xl py-4 text-sm font-black text-white shadow-[0_8px_25px_rgba(185,28,28,0.2)] hover:scale-105 transition-all active:scale-95">
+               <UIcon name="i-heroicons-lock-closed-20-solid" class="w-5 h-5" />
+               Mở Hộp
             </NuxtLink>
           </div>
-        </div>
-      </section>
-
-      <!-- Unlucky Box -->
-      <section class="relative bg-[#1c1c1e] border border-white/10 rounded-[40px] p-7 shadow-2xl">
-        <div class="absolute top-6 right-6 w-11 h-11 bg-red-950/30 rounded-full flex items-center justify-center border border-red-500/20 shadow-lg">
-          <UIcon name="i-heroicons-exclamation-triangle-20-solid" class="w-7 h-7 text-red-500" />
-        </div>
-        <div class="mb-5">
-          <h3 class="text-2xl font-black mb-1 text-white">Unlucky Box</h3>
-          <p class="text-gray-400 text-xs font-medium">Hộp quà xui xẻo</p>
-        </div>
-        <div class="flex gap-6 items-center">
-          <div class="flex-1">
-            <p class="text-[11px] text-gray-400 leading-relaxed mb-6 font-medium">
-              Thử thách lòng can đảm với những hình phạt "khó đỡ" nhất. Bạn có dám thử?
-            </p>
-            <NuxtLink to="/game/unlucky-box" class="w-full flex items-center justify-center gap-2 bg-red-600 rounded-2xl py-3.5 px-6 text-sm font-black text-white shadow-[0_8px_20px_rgba(220,38,38,0.4)] hover:bg-red-700 transition-all">
-              <UIcon name="i-heroicons-lock-open-20-solid" class="w-4 h-4" />
-              Mở Hộp
-            </NuxtLink>
-          </div>
-          <div class="relative w-32 shrink-0 aspect-square bg-[#0f0f0f] border border-white/10 rounded-3xl flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform overflow-hidden">
-             <UIcon name="i-heroicons-cube-20-solid" class="w-16 h-16 text-red-600 drop-shadow-[0_0_12px_rgba(220,38,38,0.6)]" />
-             <div class="absolute top-0 right-0 px-2 py-1 bg-red-600 rounded-bl-xl text-[8px] font-black text-white uppercase italic tracking-tighter">Danger</div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Footer mimic -->
-    <div class="mt-32 pt-16 border-t border-white/5 max-w-md mx-auto text-center px-6">
-      <div class="flex flex-col items-center gap-5 mb-10">
-        <div class="flex items-center gap-3">
-          <AppLogo size="sm" />
-          <span class="text-xl font-black text-white tracking-tight">Cạch Cạch</span>
-        </div>
-        <p class="text-gray-400 text-sm font-medium">Kết nối bạn bè qua từng thử thách.</p>
+        </section>
       </div>
+    </section>
 
-      <div class="flex justify-center gap-8 mb-12">
-        <a href="#" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/10 transition-all">
-          <UIcon name="i-fe-facebook" class="w-6 h-6" />
-        </a>
-        <a href="#" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/10 transition-all">
-          <UIcon name="i-heroicons-camera-20-solid" class="w-6 h-6" />
-        </a>
-        <a href="#" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/10 transition-all">
-          <UIcon name="i-heroicons-video-camera-20-solid" class="w-6 h-6" />
-        </a>
-      </div>
 
-      <div class="flex flex-col gap-4 mb-14">
-        <button class="flex items-center justify-center gap-3 bg-white text-black py-3.5 rounded-2xl font-black text-[13px] shadow-2xl transform active:scale-95 transition-all">
-          <UIcon name="i-heroicons-device-phone-mobile-20-solid" class="w-5 h-5" />
-          Download on App Store
-        </button>
-        <button class="flex items-center justify-center gap-3 bg-white/5 border border-white/10 text-white py-3.5 rounded-2xl font-black text-[13px] hover:bg-white/10 transition-all">
-          <UIcon name="i-heroicons-shopping-bag-20-solid" class="w-5 h-5 opacity-70" />
-          Get it on Google Play
-        </button>
-      </div>
-
-      <div class="flex justify-center gap-8 text-[11px] font-black text-gray-500 uppercase tracking-[0.2em] mb-6">
-        <a href="#" class="hover:text-white transition-colors">Điều khoản</a>
-        <a href="#" class="hover:text-white transition-colors">Bảo mật</a>
-        <a href="#" class="hover:text-white transition-colors">Liên hệ</a>
-      </div>
-      <p class="text-[10px] text-gray-600 uppercase font-black tracking-[0.3em] pb-10">© 2024 Cạch Cạch Games. All Rights Reserved.</p>
-    </div>
   </div>
 </template>
 
