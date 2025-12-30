@@ -35,10 +35,11 @@
       </div>
       <!-- Right Section (Image) -->
       <div class="flex-1 relative">
-        <img 
+        <NuxtImg 
           :src="activeGame.image" 
           :alt="activeGame.title" 
           class="w-full h-full object-cover"
+          format="webp"
         />
         <div :class="[
           'absolute inset-0 hidden md:block',

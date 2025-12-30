@@ -53,7 +53,13 @@
           <!-- Post Image -->
           <div class="w-full md:w-[340px] aspect-[16/9] md:aspect-[4/3] rounded-2xl overflow-hidden shrink-0 bg-[#1a120b]">
             <template v-if="post.image">
-              <img :src="post.image" :alt="post.title" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <NuxtImg 
+                :src="post.image" 
+                :alt="post.title" 
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                format="webp"
+                loading="lazy"
+              />
             </template>
             <div v-else class="w-full h-full flex items-center justify-center p-8 opacity-20">
               <UIcon :name="post.placeholderIcon" class="w-16 h-16" />

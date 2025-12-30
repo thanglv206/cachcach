@@ -63,10 +63,12 @@
       <!-- Right Content (Image) -->
       <div class="flex-1 relative order-2">
         <div class="relative rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
-          <img 
+          <NuxtImg 
             src="/images/hero_people_playing.png" 
             alt="Friends playing games" 
             class="w-full h-auto object-cover aspect-[4/3] lg:aspect-square xl:aspect-[4/3]"
+            format="webp"
+            loading="eager"
           />
           <!-- Overlay Badge -->
           <div class="absolute bottom-6 left-6 p-5 bg-[#1a120b]/80 backdrop-blur-md rounded-2xl border border-white/10 max-w-[260px]">
