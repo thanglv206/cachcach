@@ -33,11 +33,11 @@
             Chơi ngay
           </NuxtLink>
           <NuxtLink 
-            to="/discover"
+            to="/contact"
             class="flex items-center gap-3 bg-white/5 border border-white/10 text-white text-base font-black py-4 px-8 rounded-xl hover:bg-white/10 transition-all duration-300 active:scale-95"
           >
-            <UIcon name="i-heroicons-globe-alt-20-solid" class="w-6 h-6" />
-            Khám phá
+            <UIcon name="i-heroicons-chat-bubble-left-right-20-solid" class="w-6 h-6" />
+            Liên hệ
           </NuxtLink>
         </div>
 
@@ -118,43 +118,7 @@
     </div>
 
     <!-- Weekly Spotlight -->
-    <section class="py-12 md:py-20 px-6 lg:px-12 max-w-7xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-black text-white mb-8">Tiêu Điểm Tuần Này</h2>
-      <div class="relative bg-[#2d1b0e] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl flex flex-col md:flex-row min-h-[400px]">
-        <!-- Left Section -->
-        <div class="flex-1 p-8 md:p-12 flex flex-col justify-center">
-          <div class="mb-4">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-lg text-red-500 text-[10px] font-black uppercase tracking-wider">
-               <UIcon name="i-heroicons-shield-exclamation-20-solid" class="w-3.5 h-3.5" />
-               18+ Content
-            </span>
-          </div>
-          <h3 class="text-3xl md:text-4xl font-black text-white mb-4">Lật thẻ bài 18+</h3>
-          <p class="text-gray-400 text-base leading-relaxed mb-8 max-w-md">
-            Phiên bản táo bạo dành cho người trưởng thành. Những thử thách "nóng bỏng" và những bí mật thầm kín sẽ được hé lộ. Bạn có dám thử?
-          </p>
-          <div class="flex flex-wrap gap-4">
-            <NuxtLink 
-              to="/game/drinking-card-18"
-              class="w-full md:w-auto flex items-center justify-center gap-2 bg-[#e11d48] text-white text-sm font-black py-3.5 px-8 rounded-xl hover:bg-[#be123c] transition-all"
-            >
-              <UIcon name="i-heroicons-play-20-solid" class="w-5 h-5" />
-              Chơi ngay
-            </NuxtLink>
-          </div>
-        </div>
-        <!-- Right Section (Image) -->
-        <div class="flex-1 relative">
-          <img 
-            src="/images/spotlight_poker_neon.png" 
-            alt="Spotlight game" 
-            class="w-full h-full object-cover"
-          />
-          <div class="absolute inset-0 bg-gradient-to-r from-[#2d1b0e] via-transparent to-transparent hidden md:block"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-[#2d1b0e] via-transparent to-transparent md:hidden"></div>
-        </div>
-      </div>
-    </section>
+    <GameWeeklySpotlight :game-id="randomGameId" />
 
     <!-- Game List -->
     <section class="py-12 md:py-20 px-6 lg:px-12 max-w-7xl mx-auto">
@@ -309,6 +273,16 @@
 </template>
 
 <script setup lang="ts">
+const spotlightGames = ['drinking-card-18', 'truth-or-dare', 'drinking-card'] as const
+
+// Get a deterministic index based on the current date to ensure it changes daily 
+// and doesn't repeat the previous day's game (cycles through the list)
+const randomGameId = computed(() => {
+  const now = new Date()
+  const dayIndex = Math.floor(now.getTime() / (1000 * 60 * 60 * 24))
+  return spotlightGames[dayIndex % spotlightGames.length]
+})
+
 useSeoMeta({
   title: 'Cạch Cạch – Game Bài Tương Tác Tiệc Tùng Số 1 Việt Nam',
   description: 'Cạch Cạch là game bài tương tác tiệc tùng số 1 Việt Nam. Chơi cùng bạn bè, phá băng cuộc vui, không cần tải app, vào là chơi ngay.',
