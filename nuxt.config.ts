@@ -35,5 +35,11 @@ export default defineNuxtConfig({
     server: {
       allowedHosts: ['oversteadfastly-splenic-amir.ngrok-free.dev'],
     },
+  },
+  routeRules: {
+    '/': { prerender: true },
+    '/contact': { prerender: true },
+    '/term-of-use': { prerender: true },
+    '/privacy-policy': { prerender: true },
   }
 })
