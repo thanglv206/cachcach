@@ -173,7 +173,7 @@
         <!-- Thật Hay Thách -->
         <section class="bg-[#241a12] rounded-[32px] md:rounded-[40px] p-6 md:p-8 flex flex-col sm:flex-row gap-6 md:gap-8 hover:bg-[#2d2118] transition-all border border-white/5 hover:border-[#f59e0b]/20 group">
           <!-- Card Illustration -->
-          <div class="w-full sm:w-40 aspect-[3/4] sm:h-auto rounded-2xl md:rounded-3xl bg-gradient-to-br from-[#80316d] to-[#4e1b41] flex items-center justify-center relative shrink-0 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+          <div class="w-full sm:w-40 aspect-square sm:aspect-[3/4] rounded-2xl md:rounded-3xl bg-gradient-to-br from-[#80316d] to-[#4e1b41] flex items-center justify-center relative shrink-0 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
              <div class="absolute top-4 right-4 px-2.5 py-1 bg-[#f43f5e] rounded-lg text-[9px] font-black text-white italic tracking-tighter">HOT</div>
              <span class="text-7xl font-black text-white/10 blur-[1px]">?</span>
              <span class="absolute text-5xl font-black text-white/40 drop-shadow-2xl">?</span>
@@ -204,7 +204,7 @@
         <!-- Lật Thẻ Bài -->
         <section class="bg-[#241a12] rounded-[32px] md:rounded-[40px] p-6 md:p-8 flex flex-col sm:flex-row gap-6 md:gap-8 hover:bg-[#2d2118] transition-all border border-white/5 hover:border-[#4a90e2]/20 group">
           <!-- Card Illustration -->
-          <div class="w-full sm:w-40 aspect-[3/4] sm:h-auto rounded-2xl md:rounded-3xl bg-gradient-to-br from-[#1e293b] to-[#0f172a] flex items-center justify-center relative shrink-0 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+          <div class="w-full sm:w-40 aspect-square sm:aspect-[3/4] rounded-2xl md:rounded-3xl bg-gradient-to-br from-[#1e293b] to-[#0f172a] flex items-center justify-center relative shrink-0 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
              <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
              <UIcon name="i-heroicons-rectangle-stack" class="w-16 h-16 text-white/10 blur-[1px] absolute" />
              <UIcon name="i-heroicons-rectangle-stack-20-solid" class="w-12 h-12 text-white/50 drop-shadow-2xl" />
@@ -238,7 +238,7 @@
         <!-- Chọn Ly -->
         <section class="bg-[#241a12] rounded-[32px] md:rounded-[40px] p-6 md:p-8 flex flex-col sm:flex-row gap-6 md:gap-8 hover:bg-[#2d2118] transition-all border border-white/5 hover:border-[#f59e0b]/20 group">
           <!-- Card Illustration -->
-          <div class="w-full sm:w-40 aspect-[3/4] sm:h-auto rounded-2xl md:rounded-3xl bg-gradient-to-br from-[#4b3621] to-[#2c1d10] flex items-center justify-center relative shrink-0 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+          <div class="w-full sm:w-40 aspect-square sm:aspect-[3/4] rounded-2xl md:rounded-3xl bg-gradient-to-br from-[#4b3621] to-[#2c1d10] flex items-center justify-center relative shrink-0 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
              <UIcon name="i-heroicons-beaker" class="w-16 h-16 text-white/10 blur-[1px] absolute" />
              <UIcon name="i-heroicons-beaker-20-solid" class="w-14 h-14 text-[#f59e0b] drop-shadow-2xl" />
           </div>
@@ -277,7 +277,7 @@
         <!-- Unlucky Box -->
         <section class="bg-[#241a12] rounded-[32px] md:rounded-[40px] p-6 md:p-8 flex flex-col sm:flex-row gap-6 md:gap-8 hover:bg-[#2d2118] transition-all border border-white/5 hover:border-[#ef4444]/20 group">
           <!-- Card Illustration -->
-          <div class="w-full sm:w-40 aspect-[3/4] sm:h-auto rounded-2xl md:rounded-3xl bg-gradient-to-br from-[#450a0a] to-[#000000] flex flex-col items-center justify-center relative shrink-0 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+          <div class="w-full sm:w-40 aspect-square sm:aspect-[3/4] rounded-2xl md:rounded-3xl bg-gradient-to-br from-[#450a0a] to-[#000000] flex flex-col items-center justify-center relative shrink-0 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
              <div class="absolute top-4 right-4 px-2 py-0.5 bg-[#ef4444] rounded text-[8px] font-black text-white tracking-tighter">DANGER</div>
              <UIcon name="i-heroicons-cube" class="w-20 h-20 text-white/5 blur-[1px] absolute" />
              <UIcon name="i-heroicons-archive-box-20-solid" class="w-16 h-16 text-[#ef4444] drop-shadow-2xl" />

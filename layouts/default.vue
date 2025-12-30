@@ -12,7 +12,7 @@
         <!-- Navigation Links -->
         <nav class="hidden md:flex items-center gap-8">
           <NuxtLink to="/" class="text-sm font-black text-white hover:text-[#f59e0b] transition-colors uppercase tracking-widest">Trang chủ</NuxtLink>
-          <NuxtLink to="/discover" class="text-sm font-black text-white hover:text-[#f59e0b] transition-colors uppercase tracking-widest">Khám phá</NuxtLink>
+          <!-- <NuxtLink to="/blog" class="text-sm font-black text-white hover:text-[#f59e0b] transition-colors uppercase tracking-widest">Blog</NuxtLink> -->
           <NuxtLink to="/contact" class="text-sm font-black text-white hover:text-[#f59e0b] transition-colors uppercase tracking-widest">Liên hệ</NuxtLink>
         </nav>
 
@@ -49,8 +49,8 @@
           <div>
             <h4 class="text-white font-black mb-6">Khám phá</h4>
             <ul class="space-y-4 text-sm text-gray-500 font-bold">
-              <li><NuxtLink to="/discover" class="hover:text-white transition-colors">Tất cả Game</NuxtLink></li>
-              <li><a href="#" class="hover:text-white transition-colors">Tin tức</a></li>
+              <li><NuxtLink to="/game" class="hover:text-white transition-colors">Tất cả Game</NuxtLink></li>
+              <!-- <li><NuxtLink to="/blog" class="hover:text-white transition-colors">Blog</NuxtLink></li> -->
             </ul>
           </div>
 
@@ -58,10 +58,9 @@
           <div>
             <h4 class="text-white font-black mb-6">Hỗ trợ</h4>
             <ul class="space-y-4 text-sm text-gray-500 font-bold">
-              <li><a href="#" class="hover:text-white transition-colors">Điều khoản sử dụng</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">Chính sách bảo mật</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">Liên hệ</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">Góp ý</a></li>
+              <li><NuxtLink to="/term-of-use" class="hover:text-white transition-colors">Điều khoản sử dụng</NuxtLink></li>
+              <li><NuxtLink to="/privacy-policy" class="hover:text-white transition-colors">Chính sách bảo mật</NuxtLink></li>
+              <li><NuxtLink to="/contact" class="hover:text-white transition-colors">Liên hệ</NuxtLink></li>
             </ul>
           </div>
         </div>
