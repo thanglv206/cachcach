@@ -14,8 +14,10 @@ export default defineNuxtConfig({
         { property: 'og:image', content: '/og-image.jpg' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:image', content: '/og-image.jpg' }
-      ]
-
+      ],
+      htmlAttrs: {
+        lang: 'vi'
+      }
     }
   },
 
@@ -37,7 +39,7 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    '/': { prerender: true },
+    '/': { isr: 86400 },
     '/contact': { prerender: true },
     '/term-of-use': { prerender: true },
     '/privacy-policy': { prerender: true },

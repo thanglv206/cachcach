@@ -6,7 +6,7 @@
         <!-- Logo and Brand -->
         <NuxtLink to="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <AppLogo size="md" />
-          <h1 class="text-xl md:text-2xl font-black text-white tracking-tight text-nowrap">Cạch Cạch</h1>
+          <span class="text-xl md:text-2xl font-black text-white tracking-tight text-nowrap">Cạch Cạch</span>
         </NuxtLink>
 
         <!-- Navigation Links -->

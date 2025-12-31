@@ -150,8 +150,16 @@
 </template>
 
 <script setup lang="ts">
+useHead({
+  link: [{ rel: 'canonical', href: 'https://cachcach.org/privacy-policy' }]
+})
+
 useSeoMeta({
   title: 'Chính sách bảo mật – Cạch Cạch',
-  description: 'Chính sách bảo mật thông tin người dùng tại Cạch Cạch.'
+  description: 'Chính sách bảo mật thông tin người dùng tại Cạch Cạch.',
+  ogTitle: 'Chính sách bảo mật – Cạch Cạch',
+  ogDescription: 'Chính sách bảo mật thông tin người dùng tại Cạch Cạch.',
+  ogType: 'website',
+  ogUrl: 'https://cachcach.org/privacy-policy',
 })
 </script>

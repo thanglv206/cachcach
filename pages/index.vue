@@ -285,12 +285,18 @@ const randomGameId = computed(() => {
   return spotlightGames[dayIndex % spotlightGames.length]
 })
 
+useHead({
+  link: [{ rel: 'canonical', href: 'https://cachcach.org' }]
+})
+
 useSeoMeta({
   title: 'Cạch Cạch – Game Bài Tương Tác Tiệc Tùng Số 1 Việt Nam',
   description: 'Cạch Cạch là game bài tương tác tiệc tùng số 1 Việt Nam. Chơi cùng bạn bè, phá băng cuộc vui, không cần tải app, vào là chơi ngay.',
   ogTitle: 'Cạch Cạch – Game Bài Tương Tác Tiệc Tùng Số 1 Việt Nam',
   ogDescription: 'Cạch Cạch là game bài tương tác tiệc tùng số 1 Việt Nam. Chơi cùng bạn bè, phá băng cuộc vui, không cần tải app, vào là chơi ngay.',
   ogImage: '/og-image.jpg',
+  ogType: 'website',
+  ogUrl: 'https://cachcach.org',
   twitterCard: 'summary_large_image',
   twitterImage: '/og-image.jpg',
 })

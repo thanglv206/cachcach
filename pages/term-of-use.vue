@@ -145,8 +145,16 @@
 </template>
 
 <script setup lang="ts">
+useHead({
+  link: [{ rel: 'canonical', href: 'https://cachcach.org/term-of-use' }]
+})
+
 useSeoMeta({
   title: 'Điều khoản sử dụng – Cạch Cạch',
-  description: 'Các điều khoản và điều kiện khi sử dụng nền tảng Cạch Cạch.'
+  description: 'Các điều khoản và điều kiện khi sử dụng nền tảng Cạch Cạch.',
+  ogTitle: 'Điều khoản sử dụng – Cạch Cạch',
+  ogDescription: 'Các điều khoản và điều kiện khi sử dụng nền tảng Cạch Cạch.',
+  ogType: 'website',
+  ogUrl: 'https://cachcach.org/term-of-use',
 })
 </script>

@@ -6,7 +6,7 @@
         <span class="w-1.5 h-1.5 rounded-full bg-[#f59e0b] shadow-[0_0_8px_#f59e0b]"></span>
         <span class="text-[10px] font-black tracking-[0.2em] text-[#f59e0b] uppercase">Support Center</span>
       </div>
-      <h2 class="text-4xl md:text-6xl font-black text-white mb-4 md:mb-6 tracking-tight">Liên Hệ</h2>
+      <h1 class="text-4xl md:text-6xl font-black text-white mb-4 md:mb-6 tracking-tight">Liên Hệ</h1>
       <p class="text-gray-400 max-w-2xl mx-auto text-center leading-relaxed font-medium text-sm md:text-base">
         Chúng tôi luôn sẵn sàng lắng nghe ý kiến và hỗ trợ bạn mọi lúc. Kết nối với Cạch Cạch ngay!
       </p>
@@ -122,9 +122,17 @@
 </template>
 
 <script setup lang="ts">
+useHead({
+  link: [{ rel: 'canonical', href: 'https://cachcach.org/contact' }]
+})
+
 useSeoMeta({
   title: 'Liên Hệ – Cạch Cạch',
-  description: 'Kết nối với đội ngũ Cạch Cạch để được hỗ trợ nhanh nhất về các sản phẩm boardgame và dịch vụ.'
+  description: 'Kết nối với đội ngũ Cạch Cạch để được hỗ trợ nhanh nhất về các sản phẩm boardgame và dịch vụ.',
+  ogTitle: 'Liên Hệ – Cạch Cạch',
+  ogDescription: 'Kết nối với đội ngũ Cạch Cạch để được hỗ trợ nhanh nhất về các sản phẩm boardgame và dịch vụ.',
+  ogType: 'website',
+  ogUrl: 'https://cachcach.org/contact',
 })
 </script>
 

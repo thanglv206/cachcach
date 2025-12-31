@@ -157,7 +157,11 @@ const blogPosts = ref([
 
 useSeoMeta({
   title: 'Tin tức & Sự kiện | Cạch Cạch',
-  description: 'Cập nhật tin tức, mẹo chơi & sự kiện mới nhất từ Cạch Cạch'
+  description: 'Cập nhật tin tức, mẹo chơi & sự kiện mới nhất từ Cạch Cạch',
+  ogTitle: 'Tin tức & Sự kiện | Cạch Cạch',
+  ogDescription: 'Cập nhật tin tức, mẹo chơi & sự kiện mới nhất từ Cạch Cạch',
+  ogType: 'website',
+  ogUrl: 'https://cachcach.org/blog',
 })
 </script>
 
