@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'game',
-  headerTitle: 'Thật hay Thách',
+  headerTitle: 'Vui vẻ',
   headerBack: true,
   headerInfo: true
 })
@@ -90,7 +90,7 @@ let currentX = 0
 let currentY = 0
 
 const handleTouchStart = (e: TouchEvent) => {
-  if (!flippedCard.value) return // Only allow swipe when a card is flipped
+  if (!flippedCard.value) return 
   
   if (e.touches && e.touches.length > 0) {
     isDragging.value = true
@@ -112,9 +112,7 @@ const handleTouchMove = (e: TouchEvent) => {
     currentX = deltaX
     currentY = deltaY
   
-    // Tinder-like rotation: more drag X = more rotation
     const rotate = deltaX * 0.05
-
     cardTransform.value = `translate(${deltaX}px, ${deltaY}px) rotate(${rotate}deg)`
   }
 }
@@ -123,22 +121,19 @@ const handleTouchEnd = () => {
   if (!isDragging.value) return
   isDragging.value = false
 
-  const threshold = 100 // Pixel distance to trigger swipe
+  const threshold = 100 
   
   if (Math.abs(currentX) > threshold) {
-    // Swipe triggered - fly off screen
     const flyX = currentX > 0 ? 1000 : -1000
     const flyY = currentY > 0 ? 500 : -500
     const flyRotate = currentX > 0 ? 45 : -45
 
     cardTransform.value = `translate(${flyX}px, ${flyY}px) rotate(${flyRotate}deg)`
     
-    // Wait for animation then move to next question
     setTimeout(() => {
       nextQuestion()
     }, 300)
   } else {
-    // Reset - snap back
     cardTransform.value = ''
     currentX = 0
     currentY = 0
@@ -146,20 +141,16 @@ const handleTouchEnd = () => {
 }
 
 const nextQuestion = () => {
-  // Reset flip state
   flippedCard.value = null
   
-  // Reset position
   setTimeout(() => {
     cardTransform.value = ''
     currentX = 0
     currentY = 0
-    // Move to next question
     currentIndex.value = (currentIndex.value + 1) % truthQuestions.length
   }, 300)
 }
 
-// Tour guide state
 const hasSeenTour = useState('hasSeenTruthOrDareTour', () => false)
 const showTour = ref(false)
 const tourStep = ref(1)
@@ -173,12 +164,10 @@ const nextTourStep = () => {
   }
 }
 
-// Initialize shuffled arrays on mount
 onMounted(() => {
   shuffledTruths.value = shuffleArray(truthQuestions)
   shuffledDares.value = shuffleArray(dareChallenges)
   
-  // Show tour if not seen before
   if (!hasSeenTour.value) {
     showTour.value = true
   }
@@ -190,12 +179,9 @@ onMounted(() => {
        @touchstart="handleTouchStart"
        @touchmove="handleTouchMove"
        @touchend="handleTouchEnd">
-    <!-- Instruction Text - hide when a card is flipped -->
     <p v-if="!flippedCard" class="text-gray-400 text-base mb-8 text-center">Chọn một lá bài để bắt đầu!</p>
 
-    <!-- Cards Container -->
     <div class="w-full max-w-md mx-auto" :class="flippedCard ? '' : 'space-y-6'">
-      <!-- THẬT Card -->
       <div 
         v-show="!flippedCard || flippedCard === 'truth'"
         class="card-wrapper"
@@ -204,7 +190,6 @@ onMounted(() => {
         @click="flipCard('truth')"
       >
         <div class="card-flipper">
-          <!-- Front Face -->
           <div class="card-face card-front bg-gradient-to-br from-[#4a3a1a] to-[#2d2410] rounded-3xl p-6 shadow-2xl border border-yellow-900/30">
             <div class="flex justify-center mb-4">
               <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#f59e0b] to-[#d97706] flex items-center justify-center shadow-lg">
@@ -215,7 +200,6 @@ onMounted(() => {
             <p class="text-gray-400 text-sm text-center">Chạm để lật thẻ</p>
           </div>
 
-          <!-- Back Face -->
           <div class="card-face card-back bg-[#18181b] rounded-3xl p-8 shadow-2xl border border-[#f59e0b]">
             <div class="mt-4">
               <h3 class="text-[#f59e0b] font-bold tracking-widest text-sm uppercase mb-2 text-center">Câu hỏi Thật</h3>
@@ -229,7 +213,6 @@ onMounted(() => {
         </div>
       </div>
 
-      <!-- THÁCH Card -->
       <div 
         v-show="!flippedCard || flippedCard === 'dare'"
         class="card-wrapper"
@@ -238,7 +221,6 @@ onMounted(() => {
         @click="flipCard('dare')"
       >
         <div class="card-flipper">
-          <!-- Front Face -->
           <div class="card-face card-front bg-gradient-to-br from-[#4a3a1a] to-[#2d2410] rounded-3xl p-6 shadow-2xl border border-yellow-900/30">
             <div class="flex justify-center mb-4">
               <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#f59e0b] to-[#d97706] flex items-center justify-center shadow-lg">
@@ -251,7 +233,6 @@ onMounted(() => {
             <p class="text-gray-400 text-sm text-center">Chạm để lật thẻ</p>
           </div>
 
-          <!-- Back Face -->
           <div class="card-face card-back bg-[#18181b] rounded-3xl p-8 shadow-2xl border border-[#f59e0b]">
             <div class="mt-4">
               <h3 class="text-[#f59e0b] font-bold tracking-widest text-sm uppercase mb-2 text-center">Thử thách</h3>
@@ -266,16 +247,11 @@ onMounted(() => {
       </div>
     </div>
 
-    <!-- Tour Guide Overlay -->
     <div v-if="showTour" class="fixed inset-0 bg-black/80 z-50 flex flex-col items-center justify-center p-8 text-center" @click="nextTourStep">
-       
-       <!-- Step 1 Instruction -->
        <div v-if="tourStep === 1" class="flex flex-col items-center animate-bounce mb-32 relative z-50">
            <p class="text-white text-xl font-bold mb-4">Chọn 1 trong 2 lá bài Thật hay Thách</p>
            <UIcon name="i-heroicons-cursor-arrow-rays" class="text-5xl text-[#f59e0b]" />
        </div>
-
-       <!-- Step 2 Instruction -->
        <div v-if="tourStep === 2" class="flex flex-col items-center relative z-50">
            <p class="text-white text-xl font-bold mb-8">Vuốt sang ngang để chuyển sang cặp bài mới</p>
            <div class="flex gap-12 items-center">
@@ -284,7 +260,6 @@ onMounted(() => {
                <UIcon name="i-heroicons-arrow-right" class="text-4xl text-white/50 animate-pulse" />
            </div>
        </div>
-
        <div class="absolute bottom-12 text-white/40 text-sm">Chạm vào màn hình để tiếp tục</div>
     </div>
   </div>
@@ -306,13 +281,11 @@ onMounted(() => {
   transition: transform 0.3s ease-out;
 }
 
-/* Disable transition when dragging for direct control */
 .card-wrapper.dragging,
 .card-wrapper.dragging .card-flipper {
   transition: none !important;
 }
 
-/* When not flipped: front face is relative (normal flow), back is absolute (hidden) */
 .card-wrapper:not(.is-flipped) .card-front {
   position: relative;
 }
@@ -323,7 +296,6 @@ onMounted(() => {
   left: 0;
 }
 
-/* When flipped: expand to flip-card height and both faces become absolute */
 .card-wrapper.is-flipped {
   aspect-ratio: 3/4;
   max-width: 320px;
@@ -365,7 +337,6 @@ onMounted(() => {
   transform: rotateY(180deg);
 }
 
-/* Hover effect only when not flipped */
 .card-wrapper:not(.is-flipped):hover .card-front {
   transform: scale(1.02);
   transition: transform 0.2s ease;

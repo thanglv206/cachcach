@@ -54,8 +54,8 @@
           </div>
           <div class="w-px h-10 bg-white/10"></div>
           <div>
-            <div class="text-2xl md:text-3xl font-black text-white">4.9/5</div>
-            <div class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Đánh giá</div>
+            <div class="text-2xl md:text-3xl font-black text-white">1K+</div>
+            <div class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Lượt truy cập</div>
           </div>
         </div>
       </div>
@@ -70,18 +70,6 @@
             format="webp"
             loading="eager"
           />
-          <!-- Overlay Badge -->
-          <div class="absolute bottom-6 left-6 p-5 bg-[#1a120b]/80 backdrop-blur-md rounded-2xl border border-white/10 max-w-[260px]">
-            <div class="flex items-center gap-2 mb-2">
-              <div class="flex items-center gap-1.5">
-                <div class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></div>
-                <span class="text-xs font-black text-white uppercase tracking-tight">Đang online</span>
-              </div>
-            </div>
-            <p class="text-[11px] text-gray-300 leading-normal font-medium">
-              <span class="text-white font-bold">1,204</span> nhóm đang cháy hết mình cùng "Thật Hay Thách"!
-            </p>
-          </div>
         </div>
         
         <!-- Subtle glow background -->
