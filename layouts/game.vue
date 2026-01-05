@@ -35,13 +35,11 @@ const goBack = () => {
 
         <template v-else>
             <!-- Standard Header for Main Game List -->
-            <div class="flex-1 flex items-center justify-between">
+            <div class="flex-1 flex items-center justify-center">
                  <NuxtLink to="/" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
                     <AppLogo size="sm" class="scale-90" />
                     <span class="text-lg font-black text-white">Cạch Cạch</span>
                  </NuxtLink>
-                 
-                 <UButton icon="i-heroicons-cog-6-tooth" color="neutral" variant="ghost" class="p-0 text-xl text-white" />
             </div>
         </template>
     </header>
