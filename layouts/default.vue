@@ -12,7 +12,7 @@
         <!-- Navigation Links -->
         <nav class="hidden md:flex items-center gap-8">
           <NuxtLink to="/" active-class="!text-primary" class="text-sm font-black text-white hover:text-[#f59e0b] transition-colors uppercase tracking-widest">Trang chủ</NuxtLink>
-          <!-- <NuxtLink to="/blog" active-class="!text-primary" class="text-sm font-black text-white hover:text-[#f59e0b] transition-colors uppercase tracking-widest">Blog</NuxtLink> -->
+          <NuxtLink to="/blog" active-class="!text-primary" class="text-sm font-black text-white hover:text-[#f59e0b] transition-colors uppercase tracking-widest">Blog</NuxtLink>
           <NuxtLink to="/contact" active-class="!text-primary" class="text-sm font-black text-white hover:text-[#f59e0b] transition-colors uppercase tracking-widest">Liên hệ</NuxtLink>
         </nav>
 
@@ -50,7 +50,7 @@
             <h4 class="text-white font-black mb-6">Khám phá</h4>
             <ul class="space-y-4 text-sm text-gray-500 font-bold">
               <li><NuxtLink to="/game" active-class="!text-primary" class="hover:text-white transition-colors">Tất cả Game</NuxtLink></li>
-              <!-- <li><NuxtLink to="/blog" active-class="!text-primary" class="hover:text-white transition-colors">Blog</NuxtLink></li> -->
+              <li><NuxtLink to="/blog" active-class="!text-primary" class="hover:text-white transition-colors">Blog</NuxtLink></li>
             </ul>
           </div>
 
