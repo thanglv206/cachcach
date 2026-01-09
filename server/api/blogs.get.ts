@@ -1,6 +1,7 @@
 import { defineCachedEventHandler, getQuery } from '#imports'
 
 export default defineCachedEventHandler(async (event) => {
+    setResponseHeader(event, 'Cache-Control', 'public, max-age=86400, stale-while-revalidate=60')
     const query = getQuery(event)
 
     const page = Number(query.page || 1)
@@ -8,7 +9,7 @@ export default defineCachedEventHandler(async (event) => {
     const category = query.category
 
     // Replace with your actual Google Sheet ID
-    const SHEET_ID = '1PEiuj_ut0A3tcYAPhC8MrsXGJ280jzymlCotrDBnPVI' // Use a placeholder or provided ID
+    const SHEET_ID = '1silJoiLhR-assSusygKbuzxYWSUZ3uabBc58Cqf_ErE' // Use a placeholder or provided ID
     const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=Blogs`
 
     try {
@@ -20,24 +21,27 @@ export default defineCachedEventHandler(async (event) => {
         const json = JSON.parse(jsonStr)
 
         let posts = json.table.rows
-            .filter((r: any) => r.c[6]?.v === true) // Assuming column 7 is 'published' boolean
+            .filter((r: any) => r.c[7]?.v === true) // Assuming column 7 is 'published' boolean
             .map((r: any) => ({
                 slug: r.c[0]?.v,
                 title: r.c[1]?.v,
                 category: r.c[2]?.v,
-                docId: r.c[3]?.v,
-                thumbnail: r.c[4]?.v,
-                description: r.c[5]?.v,
-                // Map common properties for UI consistency
-                id: r.c[0]?.v, // Use slug as id
-                tag: r.c[2]?.v, // Use category as tag
-                summary: r.c[5]?.v,
-                image: r.c[4]?.v,
-                date: r.c[7]?.f // Google Sheets might not have date, or we map it if available
+                categoryName: r.c[3]?.v,
+                tag: r.c[3]?.v?.split(',')[0]?.trim() || 'TIN TỨC', // Use first category name as tag
+                docId: r.c[4]?.v,
+                thumbnail: r.c[5]?.v,
+                image: r.c[5]?.v,
+                description: r.c[6]?.v,
+                summary: r.c[6]?.v,
+                published: r.c[7]?.v,
+                date: r.c[8]?.f || r.c[8]?.v,
             }))
 
         if (category && category !== 'all') {
-            posts = posts.filter((p: any) => p.category === category)
+            posts = posts.filter((p: any) => {
+                const categories = p.category?.split(',').map((c: string) => c.trim()) || []
+                return categories.includes(category)
+            })
         }
 
         const total = posts.length
@@ -65,5 +69,12 @@ export default defineCachedEventHandler(async (event) => {
             },
             error: 'Failed to fetch blogs'
         }
+    }
+}, {
+    maxAge: 60 * 60 * 24, // 1 day
+    name: 'blogList',
+    getKey: (event) => {
+        const query = getQuery(event)
+        return `blog-list-${query.category || 'all'}-${query.page || 1}`
     }
 })

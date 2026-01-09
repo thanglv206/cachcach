@@ -20,29 +20,20 @@
               : 'bg-white/5 text-gray-400 hover:bg-white/10'
           ]"
         >
-          Tin tức
+          Tất cả
         </button>
         <button
-          @click="activeCategory = 'tips'"
+          v-for="cat in categories"
+          :key="cat.slug"
+          @click="activeCategory = cat.slug"
           :class="[
             'px-6 py-2.5 rounded-full text-sm font-black transition-all',
-            activeCategory === 'tips' 
+            activeCategory === cat.slug
               ? 'bg-[#f59e0b] text-black shadow-[0_4px_15px_rgba(245,158,11,0.2)]' 
               : 'bg-white/5 text-gray-400 hover:bg-white/10'
           ]"
         >
-          Mẹo chơi game
-        </button>
-        <button
-          @click="activeCategory = 'updates'"
-          :class="[
-            'px-6 py-2.5 rounded-full text-sm font-black transition-all',
-            activeCategory === 'updates' 
-              ? 'bg-[#f59e0b] text-black shadow-[0_4px_15px_rgba(245,158,11,0.2)]' 
-              : 'bg-white/5 text-gray-400 hover:bg-white/10'
-          ]"
-        >
-          Cập nhật
+          {{ cat.title }}
         </button>
       </div>
 
@@ -68,13 +59,22 @@
 
           <!-- Post Content -->
           <div class="flex-1 flex flex-col justify-center py-0 md:py-2">
-            <div class="flex items-center gap-3 mb-2 md:mb-4">
-              <span :class="[
-                'px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-wider',
-                post.tagColor || 'bg-[#f59e0b] text-black'
-              ]">
-                {{ post.tag }}
-              </span>
+            <div class="flex flex-wrap items-center gap-2 mb-2 md:mb-4">
+              <template v-if="post.categoryName">
+                <span 
+                  v-for="(cat, index) in post.categoryName.split(',').slice(0, 2)" 
+                  :key="index"
+                  class="px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-wider bg-[#f59e0b] text-black shrink-0"
+                >
+                  {{ cat.trim() }}
+                </span>
+                <span 
+                  v-if="post.categoryName.split(',').length > 2"
+                  class="px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-wider bg-white/5 text-gray-400 shrink-0"
+                >
+                  +{{ post.categoryName.split(',').length - 2 }}
+                </span>
+              </template>
               <div class="flex items-center gap-1.5 text-[11px] text-gray-500 font-bold uppercase tracking-tight">
                 <UIcon name="i-heroicons-clock" class="w-3.5 h-3.5" />
                 {{ post.date }}
@@ -89,7 +89,7 @@
               {{ post.summary }}
             </p>
 
-            <NuxtLink to="#" class="flex items-center gap-2 text-[#f59e0b] text-sm font-black uppercase tracking-widest hover:underline group/link">
+            <NuxtLink :to="`/blog/${post.slug}`" class="flex items-center gap-2 text-[#f59e0b] text-sm font-black uppercase tracking-widest hover:underline group/link">
               Xem chi tiết
               <UIcon name="i-heroicons-arrow-right-20-solid" class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
             </NuxtLink>
@@ -122,8 +122,38 @@
 </template>
 
 <script setup lang="ts">
-const activeCategory = ref('all')
-const currentPage = ref(1)
+const route = useRoute()
+const router = useRouter()
+
+const activeCategory = computed({
+  get: () => (route.query.category as string) || 'all',
+  set: (val) => {
+    router.push({ 
+      query: { 
+        ...route.query, 
+        category: val === 'all' ? undefined : val,
+        page: undefined // Reset page when category changes
+      } 
+    })
+  }
+})
+
+const currentPage = computed({
+  get: () => Number(route.query.page) || 1,
+  set: (val) => {
+    router.push({ 
+      query: { 
+        ...route.query, 
+        page: val === 1 ? undefined : val 
+      } 
+    })
+  }
+})
+
+interface Category {
+  slug: string
+  title: string
+}
 
 interface BlogResponse {
   data: any[]
@@ -135,8 +165,21 @@ interface BlogResponse {
   }
 }
 
+// Fetch Categories
+const categories = useState<Category[]>('blog-categories', () => [])
+
+if (categories.value.length === 0) {
+  const { data: categoriesData } = await useAsyncData<{ data: Category[] }>(
+    'blog-categories',
+    () => $fetch('/api/blog-categories')
+  )
+  if (categoriesData.value?.data) {
+    categories.value = categoriesData.value.data
+  }
+}
+
 const { data: blogData, pending } = await useAsyncData<BlogResponse>(
-  `blogs-${currentPage.value}-${activeCategory.value}`,
+  `blogs-${activeCategory.value}-${currentPage.value}`,
   () => $fetch('/api/blogs', {
     query: {
       page: currentPage.value,
@@ -145,17 +188,12 @@ const { data: blogData, pending } = await useAsyncData<BlogResponse>(
     }
   }),
   {
-    watch: [currentPage, activeCategory]
+    watch: [() => route.query.category, () => route.query.page]
   }
 )
 
 const blogPosts = computed(() => blogData.value?.data || [])
 const totalPages = computed(() => blogData.value?.pagination?.totalPages || 1)
-
-// Reset to page 1 when category changes
-watch(activeCategory, () => {
-  currentPage.value = 1
-})
 
 useSeoMeta({
   title: 'Tin tức & Sự kiện | Cạch Cạch',
