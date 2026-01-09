@@ -65,6 +65,6 @@ ${urls}
     setHeader(event, 'Cache-Control', 'public, max-age=86400, stale-while-revalidate=60')
     return sitemap
 }, {
-    maxAge: 1, // 1 day
+    maxAge: 60 * 60 * 24, // 1 day
     name: 'sitemap',
 })
