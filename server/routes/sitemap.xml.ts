@@ -3,7 +3,7 @@ import { defineCachedEventHandler, setHeader } from '#imports'
 export default defineCachedEventHandler(async (event) => {
     const host = getRequestHost(event)
     const protocol = getRequestProtocol(event)
-    const baseUrl = `${protocol}://${host}`
+    const baseUrl = `https://cachcach.org` || `${protocol}://${host}`
 
     const staticRoutes = [
         '/',
@@ -65,6 +65,6 @@ ${urls}
     setHeader(event, 'Cache-Control', 'public, max-age=86400, stale-while-revalidate=60')
     return sitemap
 }, {
-    maxAge: 60 * 60 * 24, // 1 day
+    maxAge: 1, // 1 day
     name: 'sitemap',
 })
