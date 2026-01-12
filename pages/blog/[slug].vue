@@ -202,7 +202,7 @@ const shareOnPlatform = (platform: 'facebook' | 'twitter' | 'linkedin') => {
 useSeoMeta({
   title: () => `${post.value?.title || 'Đang tải...'} | Blog Cạch Cạch`,
   ogTitle: () => post.value?.title,
-  description: () => post.value?.description || 'Khám phá bí mật chiến thắng trong trò chơi Lật Thẻ Bài cùng Admin Cạch Cạch.',
+  description: () => post.value?.description || 'Khám phá bí mật chiến thắng trong trò chơi Drinking Card cùng Cạch Cạch.',
   ogDescription: () => post.value?.description,
   ogImage: () => post.value?.image,
   ogType: 'article',

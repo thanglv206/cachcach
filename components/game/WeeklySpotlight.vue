@@ -108,7 +108,7 @@ const games: Record<string, GameSpotlight> = {
   },
   'drinking-card': {
     id: 'drinking-card',
-    title: 'Lật Thẻ Bài',
+    title: 'Drinking Card',
     description: 'Mỗi lá bài là một yêu cầu thú vị. Không ai biết trước điều gì sẽ xảy ra! Trò chơi kinh điển cho mọi cuộc vui.',
     image: '/images/drinking_card_classic_spotlight.png',
     link: '/game/drinking-card',

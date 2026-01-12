@@ -1,5 +1,5 @@
 <template>
-  <div class="pb-24 overflow-x-hidden bg-[#1a120b] min-h-screen text-white">
+  <div class="overflow-x-hidden bg-[#1a120b] min-h-screen text-white">
     <!-- New Hero Section -->
     <div class="relative pt-6 md:pt-16 pb-10 md:pb-24 px-6 lg:px-12 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
       <!-- Left Content -->
@@ -128,9 +128,8 @@
         <section class="bg-[#241a12] rounded-[32px] md:rounded-[40px] p-6 md:p-8 flex flex-col sm:flex-row gap-6 md:gap-8 hover:bg-[#2d2118] transition-all border border-white/5 hover:border-[#f59e0b]/20 group">
           <!-- Card Illustration -->
           <div class="w-full sm:w-40 aspect-square sm:aspect-[3/4] rounded-2xl md:rounded-3xl bg-gradient-to-br from-[#80316d] to-[#4e1b41] flex items-center justify-center relative shrink-0 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+             <NuxtImg src="/images/games/truth-or-dare.png" alt="Thật Hay Thách" class="absolute inset-0 w-full h-full object-cover" />
              <div class="absolute top-4 right-4 px-2.5 py-1 bg-[#f43f5e] rounded-lg text-[9px] font-black text-white italic tracking-tighter">HOT</div>
-             <span class="text-7xl font-black text-white/10 blur-[1px]">?</span>
-             <span class="absolute text-5xl font-black text-white/40 drop-shadow-2xl">?</span>
           </div>
           <!-- Card Content -->
           <div class="flex-1 flex flex-col justify-between">
@@ -155,19 +154,17 @@
           </div>
         </section>
 
-        <!-- Lật Thẻ Bài -->
+        <!-- Drinking Card -->
         <section class="bg-[#241a12] rounded-[32px] md:rounded-[40px] p-6 md:p-8 flex flex-col sm:flex-row gap-6 md:gap-8 hover:bg-[#2d2118] transition-all border border-white/5 hover:border-[#4a90e2]/20 group">
           <!-- Card Illustration -->
           <div class="w-full sm:w-40 aspect-square sm:aspect-[3/4] rounded-2xl md:rounded-3xl bg-gradient-to-br from-[#1e293b] to-[#0f172a] flex items-center justify-center relative shrink-0 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
-             <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-             <UIcon name="i-heroicons-rectangle-stack" class="w-16 h-16 text-white/10 blur-[1px] absolute" />
-             <UIcon name="i-heroicons-rectangle-stack-20-solid" class="w-12 h-12 text-white/50 drop-shadow-2xl" />
+             <NuxtImg src="/images/games/drinking-card.png" alt="Drinking Card" class="absolute inset-0 w-full h-full object-cover" />
           </div>
           <!-- Card Content -->
           <div class="flex-1 flex flex-col justify-between">
             <div>
               <div class="flex justify-between items-start mb-1">
-                 <h3 class="text-2xl font-black text-white group-hover:text-[#4a90e2] transition-colors">Lật Thẻ Bài</h3>
+                 <h3 class="text-2xl font-black text-white group-hover:text-[#4a90e2] transition-colors">Drinking Card</h3>
                  <div class="w-9 h-9 rounded-full bg-[#4a90e2]/10 flex items-center justify-center border border-[#4a90e2]/20">
                     <UIcon name="i-heroicons-rectangle-stack-20-solid" class="w-5 h-5 text-[#4a90e2]" />
                  </div>
@@ -193,8 +190,7 @@
         <section class="bg-[#241a12] rounded-[32px] md:rounded-[40px] p-6 md:p-8 flex flex-col sm:flex-row gap-6 md:gap-8 hover:bg-[#2d2118] transition-all border border-white/5 hover:border-[#f59e0b]/20 group">
           <!-- Card Illustration -->
           <div class="w-full sm:w-40 aspect-square sm:aspect-[3/4] rounded-2xl md:rounded-3xl bg-gradient-to-br from-[#4b3621] to-[#2c1d10] flex items-center justify-center relative shrink-0 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
-             <UIcon name="i-heroicons-beaker" class="w-16 h-16 text-white/10 blur-[1px] absolute" />
-             <UIcon name="i-heroicons-beaker-20-solid" class="w-14 h-14 text-[#f59e0b] drop-shadow-2xl" />
+             <NuxtImg src="/images/games/choose-goblet.png" alt="Chọn Ly" class="absolute inset-0 w-full h-full object-cover" />
           </div>
           <!-- Card Content -->
           <div class="flex-1 flex flex-col justify-between">
@@ -232,9 +228,8 @@
         <section class="bg-[#241a12] rounded-[32px] md:rounded-[40px] p-6 md:p-8 flex flex-col sm:flex-row gap-6 md:gap-8 hover:bg-[#2d2118] transition-all border border-white/5 hover:border-[#ef4444]/20 group">
           <!-- Card Illustration -->
           <div class="w-full sm:w-40 aspect-square sm:aspect-[3/4] rounded-2xl md:rounded-3xl bg-gradient-to-br from-[#450a0a] to-[#000000] flex flex-col items-center justify-center relative shrink-0 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+             <NuxtImg src="/images/games/unlucky-box.png" alt="Unlucky Box" class="absolute inset-0 w-full h-full object-cover" />
              <div class="absolute top-4 right-4 px-2 py-0.5 bg-[#ef4444] rounded text-[8px] font-black text-white tracking-tighter">DANGER</div>
-             <UIcon name="i-heroicons-cube" class="w-20 h-20 text-white/5 blur-[1px] absolute" />
-             <UIcon name="i-heroicons-archive-box-20-solid" class="w-16 h-16 text-[#ef4444] drop-shadow-2xl" />
           </div>
           <!-- Card Content -->
           <div class="flex-1 flex flex-col justify-between">
@@ -255,6 +250,58 @@
             </NuxtLink>
           </div>
         </section>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 md:py-24 bg-[#241a12]/50 border-y border-white/5">
+      <div class="px-6 lg:px-12 max-w-7xl mx-auto">
+        <div class="text-center mb-12 md:mb-18">
+          <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Người dùng nói về Cạch Cạch</h2>
+          <div class="w-16 h-1 bg-[#f59e0b] mx-auto rounded-full"></div>
+        </div>
+
+        <div class="relative max-w-6xl mx-auto">
+          <UCarousel
+            ref="testimonialCarousel"
+            v-slot="{ item }"
+            :items="testimonials"
+            class="w-full"
+            :ui="{ 
+              item: 'basis-full md:basis-1/3 px-3 md:px-4'
+            }"
+            @select="onTestimonialSelect"
+          >
+            <div class="bg-[#2d2118] rounded-[32px] p-8 h-full border border-white/5 hover:border-[#f59e0b]/20 transition-all group shadow-xl">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-[#f59e0b]/20 bg-[#1a120b]">
+                  <NuxtImg :src="item.avatar" :alt="item.name" class="w-full h-full object-cover" />
+                </div>
+                <div>
+                  <h4 class="font-black text-white text-lg">{{ item.name }}</h4>
+                  <div class="flex gap-0.5 mt-1">
+                    <UIcon v-for="i in 5" :key="i" name="i-heroicons-star-20-solid" class="w-4 h-4 text-[#f59e0b]" />
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-300 text-sm leading-relaxed font-medium italic">
+                "{{ item.message }}"
+              </p>
+            </div>
+          </UCarousel>
+
+          <!-- Custom Dot Navigation -->
+          <div class="flex justify-center gap-2 mt-10 md:mt-14">
+            <button 
+              v-for="(_, index) in testimonials" 
+              :key="index"
+              @click="selectTestimonial(index)"
+              class="h-1.5 rounded-full transition-all duration-300"
+              :class="[currentTestimonialIndex === index ? 'bg-[#f59e0b] w-8' : 'bg-white/10 w-2 hover:bg-white/20']"
+              :aria-label="`Go to testimonial ${index + 1}`"
+            />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -289,6 +336,106 @@ useSeoMeta({
   twitterImage: '/og-image.jpg',
 })
 
+const testimonials = [
+  {
+    name: 'Hoàng Anh',
+    message: 'Nền tảng tuyệt vời để gắn kết bạn bè! Game Thật Hay Thách rất nhiều câu hỏi thú vị, giao diện lại mượt mà.',
+    rating: 5,
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=HoangAnh'
+  },
+  {
+    name: 'Khánh Linh',
+    message: 'Thích nhất là không cần tải app. Mở link trên điện thoại là cả đám chơi được luôn. Rất tiện lợi!',
+    rating: 5,
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=KhanhLinh'
+  },
+  {
+    name: 'Tuấn Minh',
+    message: 'Game Chọn Ly làm mấy buổi nhậu của bọn mình vui hơn hẳn. Hồi hộp cực kỳ, 10 điểm cho sự sáng tạo.',
+    rating: 5,
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=TuanMinh'
+  },
+  {
+    name: 'Minh Thư',
+    message: 'Giao diện dark mode nhìn cực kỳ premium. Các hiệu ứng chuyển động mượt mà, cảm giác chơi rất thích.',
+    rating: 5,
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=MinhThu'
+  },
+  {
+    name: 'Đức Huy',
+    message: 'Drinking Card 18+ thực sự là cứu cánh cho những buổi hẹn hò cần thêm chút "nhiệt". Rất đáng thử!',
+    rating: 5,
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=DucHuy'
+  },
+  {
+    name: 'Bảo Ngọc',
+    message: 'Mình rất thích cách team nội dung biên soạn câu hỏi. Vừa hài hước lại vừa có chiều sâu, không bị nhàm chán.',
+    rating: 5,
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=BaoNgoc'
+  },
+  {
+    name: 'Thanh Tùng',
+    message: 'Unlucky Box đúng là thử thách nhân phẩm. Cả nhóm mình đã có những trận cười ra nước mắt với cái hộp này.',
+    rating: 5,
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=ThanhTung'
+  },
+  {
+    name: 'Lan Hương',
+    message: 'Màu sắc và font chữ được lựa chọn rất tinh tế. Tổng thể website nhìn rất hiện đại và chuyên nghiệp.',
+    rating: 5,
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=LanHuong'
+  },
+  {
+    name: 'Quốc Bảo',
+    message: 'Đã chơi qua nhiều web game nhưng Cạch Cạch vẫn là chân ái vì cộng đồng và nội dung thuần Việt.',
+    rating: 5,
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=QuocBao'
+  },
+  {
+    name: 'Mai Phương',
+    message: 'Hệ thống blog chia sẻ mẹo chơi cũng rất hay. Giúp mình biết cách "phá băng" hiệu quả hơn trong các bữa tiệc.',
+    rating: 5,
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=MaiPhuong'
+  },
+  {
+    name: 'Hữu Phước',
+    message: 'Mong website sớm ra thêm nhiều game mới nữa. Hiện tại các game này đã quá đủ để "cháy" hết mình rồi!',
+    rating: 5,
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=HuuPhuoc'
+  },
+  {
+    name: 'Thu Trà',
+    message: 'Mỗi lần buồn chán là lại rủ bạn bè vào làm vài ván Thật Hay Thách. Stress bay biến luôn trong một nốt nhạc.',
+    rating: 5,
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=ThuTra'
+  }
+]
+
+const testimonialCarousel = useTemplateRef('testimonialCarousel')
+const currentTestimonialIndex = ref(0)
+
+function onTestimonialSelect(index: number) {
+  currentTestimonialIndex.value = index
+}
+
+function selectTestimonial(index: number) {
+  currentTestimonialIndex.value = index
+  testimonialCarousel.value?.emblaApi?.scrollTo(index)
+}
+
+let autoplayTimer: any = null
+
+onMounted(() => {
+  autoplayTimer = setInterval(() => {
+    if (!testimonialCarousel.value) return
+    const nextIndex = (currentTestimonialIndex.value + 1) % testimonials.length
+    selectTestimonial(nextIndex)
+  }, 6000)
+})
+
+onUnmounted(() => {
+  if (autoplayTimer) clearInterval(autoplayTimer)
+})
 </script>
 
 
