@@ -145,8 +145,10 @@
 </template>
 
 <script setup lang="ts">
+const config = useRuntimeConfig()
+
 useHead({
-  link: [{ rel: 'canonical', href: 'https://cachcach.org/term-of-use' }]
+  link: [{ rel: 'canonical', href: `${config.public.siteUrl}/term-of-use` }]
 })
 
 useSeoMeta({
@@ -155,6 +157,6 @@ useSeoMeta({
   ogTitle: 'Điều khoản sử dụng – Cạch Cạch',
   ogDescription: 'Các điều khoản và điều kiện khi sử dụng nền tảng Cạch Cạch.',
   ogType: 'website',
-  ogUrl: 'https://cachcach.org/term-of-use',
+  ogUrl: `${config.public.siteUrl}/term-of-use`,
 })
 </script>

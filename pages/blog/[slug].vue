@@ -141,6 +141,7 @@
 </template>
 
 <script setup lang="ts">
+const config = useRuntimeConfig()
 const route = useRoute()
 const slug = route.params.slug as string
 
@@ -216,7 +217,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: `https://cachcach.vn/blog/${slug}`
+      href: `${config.public.siteUrl}/blog/${slug}`
     }
   ]
 })

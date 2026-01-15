@@ -150,8 +150,10 @@
 </template>
 
 <script setup lang="ts">
+const config = useRuntimeConfig()
+
 useHead({
-  link: [{ rel: 'canonical', href: 'https://cachcach.org/privacy-policy' }]
+  link: [{ rel: 'canonical', href: `${config.public.siteUrl}/privacy-policy` }]
 })
 
 useSeoMeta({
@@ -160,6 +162,6 @@ useSeoMeta({
   ogTitle: 'Chính sách bảo mật – Cạch Cạch',
   ogDescription: 'Chính sách bảo mật thông tin người dùng tại Cạch Cạch.',
   ogType: 'website',
-  ogUrl: 'https://cachcach.org/privacy-policy',
+  ogUrl: `${config.public.siteUrl}/privacy-policy`,
 })
 </script>

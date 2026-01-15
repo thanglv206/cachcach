@@ -74,7 +74,7 @@
 
         <div class="space-y-3 md:space-y-4">
           <!-- Facebook -->
-          <a href="#" class="flex items-center justify-between p-4 md:p-5 rounded-2xl bg-[#33281e] border border-white/5 hover:border-[#f59e0b]/30 transition-all group/item">
+          <a href="#" target="_blank" rel="nofollow" class="flex items-center justify-between p-4 md:p-5 rounded-2xl bg-[#33281e] border border-white/5 hover:border-[#f59e0b]/30 transition-all group/item">
             <div class="flex items-center gap-4">
               <div class="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-blue-600/20 flex items-center justify-center">
                 <UIcon name="i-simple-icons-facebook" class="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
@@ -88,7 +88,7 @@
           </a>
 
           <!-- TikTok -->
-          <a href="#" class="flex items-center justify-between p-4 md:p-5 rounded-2xl bg-[#33281e] border border-white/5 hover:border-[#f59e0b]/30 transition-all group/item">
+          <a href="#" target="_blank" rel="nofollow" class="flex items-center justify-between p-4 md:p-5 rounded-2xl bg-[#33281e] border border-white/5 hover:border-[#f59e0b]/30 transition-all group/item">
             <div class="flex items-center gap-4">
               <div class="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-white/10 flex items-center justify-center">
                 <UIcon name="i-simple-icons-tiktok" class="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
@@ -102,7 +102,7 @@
           </a>
 
           <!-- Instagram -->
-          <a href="#" class="flex items-center justify-between p-4 md:p-5 rounded-2xl bg-[#33281e] border border-white/5 hover:border-[#f59e0b]/30 transition-all group/item">
+          <a href="#" target="_blank" rel="nofollow" class="flex items-center justify-between p-4 md:p-5 rounded-2xl bg-[#33281e] border border-white/5 hover:border-[#f59e0b]/30 transition-all group/item">
             <div class="flex items-center gap-4">
               <div class="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-pink-600/20 flex items-center justify-center">
                 <UIcon name="i-simple-icons-instagram" class="w-4 h-4 md:w-5 md:h-5 text-pink-600" />
@@ -122,8 +122,10 @@
 </template>
 
 <script setup lang="ts">
+const config = useRuntimeConfig()
+
 useHead({
-  link: [{ rel: 'canonical', href: 'https://cachcach.org/contact' }]
+  link: [{ rel: 'canonical', href: `${config.public.siteUrl}/contact` }]
 })
 
 useSeoMeta({
@@ -132,7 +134,7 @@ useSeoMeta({
   ogTitle: 'Liên Hệ – Cạch Cạch',
   ogDescription: 'Kết nối với đội ngũ Cạch Cạch để được hỗ trợ nhanh nhất về các sản phẩm boardgame và dịch vụ.',
   ogType: 'website',
-  ogUrl: 'https://cachcach.org/contact',
+  ogUrl: `${config.public.siteUrl}/contact`,
 })
 </script>
 

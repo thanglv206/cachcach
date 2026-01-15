@@ -3,6 +3,8 @@ definePageMeta({
   layout: 'game'
 })
 
+const config = useRuntimeConfig()
+
 useSeoMeta({
   title: 'Chơi Cạch Cạch Online | Game Bài Party Chơi Cùng Bạn Bè',
   description: 'Chơi Cạch Cạch online ngay trên trình duyệt. Game bài tiệc tùng tương tác cao, chơi càng đông càng vui, không cần tải app.',
@@ -10,7 +12,7 @@ useSeoMeta({
   ogDescription: 'Chơi Cạch Cạch online ngay trên trình duyệt. Game bài tiệc tùng tương tác cao, chơi càng đông càng vui, không cần tải app.',
   ogImage: '/og-image.jpg',
   ogType: 'website',
-  ogUrl: 'https://cachcach.org/game',
+  ogUrl: `${config.public.siteUrl}/game`,
   twitterCard: 'summary_large_image',
   twitterImage: '/og-image.jpg',
 })

@@ -195,13 +195,15 @@ const { data: blogData, pending } = await useAsyncData<BlogResponse>(
 const blogPosts = computed(() => blogData.value?.data || [])
 const totalPages = computed(() => blogData.value?.pagination?.totalPages || 1)
 
+const config = useRuntimeConfig()
+
 useSeoMeta({
   title: 'Tin tức & Sự kiện | Cạch Cạch',
   description: 'Cập nhật tin tức, mẹo chơi & sự kiện mới nhất từ Cạch Cạch',
   ogTitle: 'Tin tức & Sự kiện | Cạch Cạch',
   ogDescription: 'Cập nhật tin tức, mẹo chơi & sự kiện mới nhất từ Cạch Cạch',
   ogType: 'website',
-  ogUrl: 'https://cachcach.org/blog',
+  ogUrl: `${config.public.siteUrl}/blog`,
 })
 </script>
 

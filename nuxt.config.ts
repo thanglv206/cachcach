@@ -13,7 +13,8 @@ export default defineNuxtConfig({
         { property: 'og:description', content: 'Cạch Cạch là game bài tương tác tiệc tùng số 1 Việt Nam. Chơi cùng bạn bè, phá băng cuộc vui, không cần tải app, vào là chơi ngay.' },
         { property: 'og:image', content: '/og-image.jpg' },
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:image', content: '/og-image.jpg' }
+        { name: 'twitter:image', content: '/og-image.jpg' },
+        { name: 'robots', content: 'index, follow' }
       ],
       htmlAttrs: {
         lang: 'vi'
@@ -43,5 +44,11 @@ export default defineNuxtConfig({
     '/contact': { prerender: true },
     '/term-of-use': { prerender: true },
     '/privacy-policy': { prerender: true },
+  },
+
+  runtimeConfig: {
+    public: {
+      siteUrl: 'https://cachcach.org'
+    }
   }
 })

@@ -310,6 +310,7 @@
 </template>
 
 <script setup lang="ts">
+const config = useRuntimeConfig()
 const spotlightGames = ['drinking-card-18', 'truth-or-dare', 'drinking-card'] as const
 
 // Get a deterministic index based on the current date to ensure it changes daily 
@@ -321,7 +322,7 @@ const randomGameId = computed(() => {
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: 'https://cachcach.org' }]
+  link: [{ rel: 'canonical', href: config.public.siteUrl as string }]
 })
 
 useSeoMeta({
@@ -331,7 +332,7 @@ useSeoMeta({
   ogDescription: 'Cạch Cạch là game bài tương tác tiệc tùng số 1 Việt Nam. Chơi cùng bạn bè, phá băng cuộc vui, không cần tải app, vào là chơi ngay.',
   ogImage: '/og-image.jpg',
   ogType: 'website',
-  ogUrl: 'https://cachcach.org',
+  ogUrl: config.public.siteUrl as string,
   twitterCard: 'summary_large_image',
   twitterImage: '/og-image.jpg',
 })

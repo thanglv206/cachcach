@@ -1,9 +1,10 @@
 import { defineCachedEventHandler, setHeader } from '#imports'
 
 export default defineCachedEventHandler(async (event) => {
+    const config = useRuntimeConfig(event)
     const host = getRequestHost(event)
     const protocol = getRequestProtocol(event)
-    const baseUrl = `https://cachcach.org` || `${protocol}://${host}`
+    const baseUrl = config.public.siteUrl || `${protocol}://${host}`
 
     const staticRoutes = [
         '/',
