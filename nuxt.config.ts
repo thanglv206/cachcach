@@ -1,5 +1,7 @@
 // import tailwindcss from '@tailwindcss/vite'
 
+import basicSsl from '@vitejs/plugin-basic-ssl'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
@@ -23,12 +25,32 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css'],
-  modules: ['@nuxt/ui', '@nuxt/image'],
-  // vite: {
-  //   plugins: [
-  //     tailwindcss(),
-  //   ],
-  // },
+  modules: ['@nuxt/ui', '@nuxt/image', '@vite-pwa/nuxt'],
+
+  pwa: {
+    manifest: {
+      name: 'Cạch Cạch – Game Bài Tương Tác Tiệc Tùng',
+      short_name: 'Cạch Cạch',
+      description: 'Cạch Cạch là game bài tương tác tiệc tùng số 1 Việt Nam. Chơi cùng bạn bè, phá băng cuộc vui, không cần tải app, vào là chơi ngay.',
+      theme_color: '#ff9000',
+      background_color: '#151c24',
+      icons: [
+        {
+          src: 'android-chrome-192x192.png',
+          sizes: '192x192',
+          type: 'image/png',
+        },
+        {
+          src: 'android-chrome-512x512.png',
+          sizes: '512x512',
+          type: 'image/png',
+        },
+      ],
+    },
+    devOptions: {
+      enabled: true,
+    },
+  },
   postcss: {
     plugins: {
       '@tailwindcss/postcss': {},
@@ -36,8 +58,11 @@ export default defineNuxtConfig({
   },
   vite: {
     server: {
-      allowedHosts: ['oversteadfastly-splenic-amir.ngrok-free.dev'],
+      allowedHosts: ['https://oversteadfastly-splenic-amir.ngrok-free.dev'],
     },
+    plugins: [
+      basicSsl()
+    ],
   },
   routeRules: {
     '/': { isr: 86400 },
