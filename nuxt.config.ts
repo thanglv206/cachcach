@@ -33,7 +33,9 @@ export default defineNuxtConfig({
       short_name: 'Cạch Cạch',
       description: 'Cạch Cạch là game bài tương tác tiệc tùng số 1 Việt Nam. Chơi cùng bạn bè, phá băng cuộc vui, không cần tải app, vào là chơi ngay.',
       theme_color: '#ff9000',
+      start_url: '/',
       background_color: '#151c24',
+      display: 'standalone',
       icons: [
         {
           src: 'android-chrome-192x192.png',
@@ -46,6 +48,9 @@ export default defineNuxtConfig({
           type: 'image/png',
         },
       ],
+    },
+    workbox: {
+      globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
     },
     devOptions: {
       enabled: true,
