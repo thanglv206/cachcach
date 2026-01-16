@@ -20,7 +20,10 @@ export default defineNuxtConfig({
       ],
       htmlAttrs: {
         lang: 'vi'
-      }
+      },
+      link: [
+        { rel: 'manifest', href: '/site.webmanifest' }
+      ]
     }
   },
 
@@ -33,7 +36,7 @@ export default defineNuxtConfig({
       short_name: 'Cạch Cạch',
       description: 'Cạch Cạch là game bài tương tác tiệc tùng số 1 Việt Nam. Chơi cùng bạn bè, phá băng cuộc vui, không cần tải app, vào là chơi ngay.',
       theme_color: '#ff9000',
-      start_url: '/',
+      start_url: '/game',
       background_color: '#151c24',
       display: 'standalone',
       icons: [
@@ -51,9 +54,13 @@ export default defineNuxtConfig({
     },
     workbox: {
       globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
+      navigateFallback: null
     },
     devOptions: {
       enabled: true,
+      suppressWarnings: true,
+      type: 'module',
+      navigateFallback: '/'
     },
   },
   postcss: {
