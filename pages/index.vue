@@ -311,7 +311,7 @@
 
 <script setup lang="ts">
 const config = useRuntimeConfig()
-const spotlightGames = ['drinking-card-18', 'truth-or-dare', 'drinking-card'] as const
+const spotlightGames = ['drinking-card-18', 'truth-or-dare', 'drinking-card', 'spin-bottle'] as const
 
 // Get a deterministic index based on the current date to ensure it changes daily 
 // and doesn't repeat the previous day's game (cycles through the list)

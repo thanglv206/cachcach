@@ -18,6 +18,7 @@ export default defineCachedEventHandler(async (event) => {
         '/game/truth-or-dare/fun',
         '/game/choose-goblet',
         '/game/unlucky-box',
+        '/game/spin-bottle',
         '/blog',
         '/contact',
         '/privacy-policy',

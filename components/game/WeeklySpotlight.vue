@@ -56,7 +56,7 @@
 
 <script setup lang="ts">
 interface GameSpotlight {
-  id: 'drinking-card-18' | 'truth-or-dare' | 'drinking-card';
+  id: 'drinking-card-18' | 'truth-or-dare' | 'drinking-card' | 'spin-bottle';
   title: string;
   description: string;
   image: string;
@@ -72,7 +72,7 @@ interface GameSpotlight {
 }
 
 const props = defineProps<{
-  gameId?: 'drinking-card-18' | 'truth-or-dare' | 'drinking-card'
+  gameId?: 'drinking-card-18' | 'truth-or-dare' | 'drinking-card' | 'spin-bottle'
 }>()
 
 const games: Record<string, GameSpotlight> = {
@@ -112,14 +112,29 @@ const games: Record<string, GameSpotlight> = {
     description: 'Mỗi lá bài là một yêu cầu thú vị. Không ai biết trước điều gì sẽ xảy ra! Trò chơi kinh điển cho mọi cuộc vui.',
     image: '/images/drinking_card_classic_spotlight.png',
     link: '/game/drinking-card',
-    badgeText: 'Classic Game',
-    badgeIcon: 'i-heroicons-rectangle-stack-20-solid',
+    badgeText: 'Hot Game',
+    badgeIcon: 'i-heroicons-bolt-20-solid',
     badgeClass: 'bg-blue-500/10 border-blue-500/20 text-blue-400',
     bgClass: 'bg-[#0f172a]',
     buttonClass: 'bg-[#1d4ed8] hover:bg-[#1e40af]',
     buttonText: 'Bắt đầu',
     overlayClassDesktop: 'bg-gradient-to-r from-[#0f172a] via-transparent to-transparent',
     overlayClassMobile: 'bg-gradient-to-t from-[#0f172a] via-transparent to-transparent'
+  },
+  'spin-bottle': {
+    id: 'spin-bottle',
+    title: 'Xoay Chai',
+    description: 'Xoay chai để chọn người "may mắn" tiếp theo. Trò chơi kết nối cực vui, mang lại những giây phút hồi hộp khó quên.',
+    image: '/images/spin_bottle_spotlight.png',
+    link: '/game/spin-bottle',
+    badgeText: 'Trending Game',
+    badgeIcon: 'i-heroicons-arrow-path-20-solid',
+    badgeClass: 'bg-amber-500/10 border-amber-500/20 text-amber-500',
+    bgClass: 'bg-[#241a12]',
+    buttonClass: 'bg-[#f59e0b] hover:bg-[#d97706]',
+    buttonText: 'Xoay ngay',
+    overlayClassDesktop: 'bg-gradient-to-r from-[#241a12] via-transparent to-transparent',
+    overlayClassMobile: 'bg-gradient-to-t from-[#241a12] via-transparent to-transparent'
   }
 }
 

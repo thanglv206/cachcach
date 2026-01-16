@@ -37,6 +37,13 @@ const sections = [
         link: '/game/truth-or-dare',
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
         color: 'bg-purple-500'
+      },
+      {
+        title: 'Xoay chai',
+        subtitle: 'Xoay để chọn người may mắn',
+        link: '/game/spin-bottle',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8"><path d="M9 3v2m6-2v2M9 5h6v3a4 4 0 0 1 4 4v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7a4 4 0 0 1 4-4V5z" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+        color: 'bg-amber-600'
       }
     ]
   },
@@ -64,6 +71,13 @@ const sections = [
         link: '/game/unlucky-box',
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8"><path d="M21 8l-2-2H5L3 8v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8zM3 8h18M7.5 13h9M12 8v5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
         color: 'bg-emerald-500'
+      },
+      {
+        title: 'Xoay chai',
+        subtitle: 'Xoay để chọn người may mắn',
+        link: '/game/spin-bottle',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8"><path d="M9 3v2m6-2v2M9 5h6v3a4 4 0 0 1 4 4v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7a4 4 0 0 1 4-4V5z" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+        color: 'bg-amber-600'
       }
     ]
   }
