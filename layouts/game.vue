@@ -9,6 +9,27 @@ const showInfo = computed(() => route.meta.headerInfo)
 const goBack = () => {
     router.push('/game')
 }
+
+// Device optimization modal logic
+const showDeviceModal = ref(false)
+
+const closeDeviceModal = () => {
+  showDeviceModal.value = false
+  if (import.meta.client) {
+    localStorage.setItem('device-optimization-notified', 'true')
+  }
+}
+
+onMounted(() => {
+  if (import.meta.client) {
+    const isDesktop = window.innerWidth > 768
+    const alreadyNotified = localStorage.getItem('device-optimization-notified')
+    
+    if (isDesktop && !alreadyNotified) {
+      showDeviceModal.value = true
+    }
+  }
+})
 </script>
 
 <template>
@@ -46,7 +67,7 @@ const goBack = () => {
 
 
     <!-- Main Content -->
-    <main class="flex-1 px-4 pt-6 overflow-y-auto overflow-x-hidden scrollbar-hide flex flex-col">
+    <main class="flex-1 px-4 pt-6 overflow-y-auto overflow-x-hidden scrollbar-hide flex flex-col font-sans">
       <slot />
     </main>
 
@@ -64,6 +85,36 @@ const goBack = () => {
           </NuxtLink>
        </div>
     </footer>
+
+    <!-- Device Optimization Modal -->
+    <div v-if="showDeviceModal" class="fixed inset-0 z-[100] flex items-center justify-center p-6 sm:p-4">
+      <!-- Backdrop -->
+      <div class="absolute inset-0 bg-black/80"></div>
+      
+      <!-- Modal Content -->
+      <div class="relative bg-[#1e2530] rounded-[2rem] p-8 w-full max-w-sm border border-white/5 shadow-2xl flex flex-col items-center">
+        <!-- Icon -->
+        <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mb-6">
+          <div class="w-12 h-12 bg-[#f59e0b] rounded-lg flex items-center justify-center shadow-[0_0_20px_rgba(245,158,11,0.3)]">
+            <UIcon name="i-heroicons-device-phone-mobile-20-solid" class="text-2xl text-black" />
+          </div>
+        </div>
+
+        <!-- Text Content -->
+        <h2 class="text-xl font-bold text-white mb-4 text-center">Thông báo tối ưu thiết bị</h2>
+        <p class="text-gray-400 text-sm leading-relaxed text-center mb-8 px-2 font-medium">
+          Game được thiết kế và hiển thị tốt nhất trên điện thoại. Vui lòng sử dụng điện thoại để chơi game với trải nghiệm tốt nhất.
+        </p>
+
+        <!-- Button -->
+        <button 
+          @click="closeDeviceModal"
+          class="w-full py-4 px-6 bg-[#f59e0b] text-black font-black rounded-2xl shadow-[0_8px_25px_rgba(245,158,11,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all"
+        >
+          Đã hiểu
+        </button>
+      </div>
+    </div>
 
   </div>
 </template>
